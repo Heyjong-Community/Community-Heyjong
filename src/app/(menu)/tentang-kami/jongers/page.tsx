@@ -19,7 +19,16 @@ import { Navigation, Pagination } from 'swiper/modules';
 
 export default function JongersPage() {
   return (
-    <div className='py-32 bg-gray-200'>
+    <div className='pb-32 bg-gray-200'>
+      <section className="bg-[url('/images/jongcamp.webp')] bg-cover bg-center bg-fixed w-full h-80 mb-10">
+        <div className='bg-black/30 h-full w-full px-5 md:px-0 flex items-center justify-center'>
+          <div className='w-full md:w-3/4' data-aos='fade-up' data-aos-duration='1000'>
+            <h1 className='font-semibold text-center text-4xl md:text-[40px] lg:text-[90px] lg:leading-24 text-white'>
+              Kenalan Sama Jongers!
+            </h1>
+          </div>
+        </div>
+      </section>
       <div id='bph' className='container px-5 mx-auto mb-20'>
         <div className=''>
           <h1 className='text-3xl font-bold text-black'>BPH</h1>
@@ -93,7 +102,7 @@ export default function JongersPage() {
       </div>
       <div id='member' className='container px-5 mx-auto mb-20'>
         <div className=''>
-          <h1 className='uppercase text-3xl font-bold text-black'>Member</h1>
+          <h1 className='uppercase text-3xl font-bold text-black'>Jongers</h1>
           <hr className='my-4 border-4 border-primary w-10' />
         </div>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
