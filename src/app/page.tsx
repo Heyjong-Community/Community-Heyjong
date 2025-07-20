@@ -33,12 +33,11 @@ export default function Home() {
               digital maupun dunia nyata dalam bentuk kegiatan-kegiatan sosial.
             </p>
             <div className='mt-4 flex items-stretch gap-2.5'>
-              <button className='uppercase font-bold text-xs md:text-sm lg:text-base bg-[#DF334D] text-white px-6 py-1 rounded-md '>
-                ABOUT US
-              </button>
-              <button className='uppercase font-bold text-xs md:text-sm lg:text-base bg-white text-black px-6 py-1 rounded-md '>
-                JOIN US
-              </button>
+              <Link href={`/tentang-kami`}>
+                <button className='uppercase cursor-pointer font-bold text-xs md:text-sm lg:text-base bg-[#DF334D] text-white px-6 py-1 rounded-md '>
+                  Tentang Kami
+                </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -47,11 +46,16 @@ export default function Home() {
       <section className="bg-[url('/images/jongcamp.webp')] bg-cover bg-bottom">
         <div className='py-32 flex items-center justify-center bg-black/30'>
           <div className=''>
-            <h1 className='uppercase text-white text-6xl text-center font-bold'>Let&apos;s Join With Us</h1>
-            <div className='flex justify-center'>
-              <Link href={`/kontak`}>
+            <h1 className='uppercase text-white text-6xl text-center font-bold'>Come Join Us!</h1>
+            <div className='flex justify-center items-center gap-3'>
+              <Link href={`https://heyjong.id/oprecMember`} target='_blank' rel='noopener noreferrer'>
                 <button className='mt-6 uppercase cursor-pointer font-bold text-xs md:text-sm lg:text-lg bg-[#DF334D] text-white px-6 py-1 rounded-md '>
-                  Join
+                  Gass Join
+                </button>
+              </Link>
+              <Link href={`#`} target='_blank' rel='noopener noreferrer'>
+                <button className='mt-6 uppercase cursor-pointer font-bold text-xs md:text-sm lg:text-lg bg-white text-black px-6 py-1 rounded-md '>
+                  Tanya-tanya Dulu
                 </button>
               </Link>
             </div>
