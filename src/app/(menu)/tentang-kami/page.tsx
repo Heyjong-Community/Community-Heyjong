@@ -18,9 +18,7 @@ export default function AboutUspage() {
       <section className="bg-[url('/images/jongcamp.webp')] bg-cover bg-center bg-fixed w-full h-screen">
         <div className='bg-black/30 h-full w-full px-5 md:px-0 flex items-center justify-center'>
           <div className='w-full md:w-3/4' data-aos='fade-up' data-aos-duration='1000'>
-            <p className='text-xs md:text-sm lg:text-base text-white uppercase font-bold'>
-              WELCOME TO HEYJONG COMMUNITY
-            </p>
+            <p className='text-xs md:text-sm lg:text-base text-white uppercase font-bold'>TENTANG HEYJONG COMMUNITY</p>
             <h1 className='font-semibold text-4xl md:text-[40px] lg:text-[90px] lg:leading-24 text-white'>
               Let&apos;s Grow Together & <br /> Spread Good Vibes
             </h1>
@@ -43,11 +41,7 @@ export default function AboutUspage() {
         </div>
       </section>
       <section className='px-5 py-24'>
-        <div
-          className='container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8'
-          // data-aos='fade-up'
-          // data-aos-duration='1000'
-        >
+        <div className='container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8'>
           <div className=''>
             <Image
               src={`/images/fotbar.webp`}
@@ -58,12 +52,15 @@ export default function AboutUspage() {
             />
           </div>
           <div className=''>
-            <p className={`uppercase text-primary text-base font-bold ${fraunces.className}`}>About Us</p>
-            <h2 className='text-3xl md:text-4xl lg:text-6xl font-bold text-black'>Grow Together</h2>
+            <p className={`uppercase text-primary text-base font-bold ${fraunces.className}`}>Tentang Kami</p>
+            <h2 className='text-3xl md:text-4xl lg:text-6xl font-bold text-black'>Perjalanan Kami</h2>
             <p className={`mt-6 text-black text-base lg:text-lg font-semibold ${fraunces.className}`}>
-              Studio Antelope® was founded by Jason Iskandar, a screenwriter and director, and Florence Giovani, an
-              adept film producer. Their combined passion and dedication set the tone for our studio. With the support
-              of a talented team, we consistently strive for authenticity and excellence in every story we craft.
+              Berawal dari perkumpulan anak muda yang memiliki keresahan atas potensi yang dimiliki tidak berkembang dan
+              karakter yang belum sesuai harapan. Dari situ, lahirlah gagasan untuk membentuk perkumpulan yang memiliki
+              dasar, keterikatan, serta tujuan yang satu. Satu per satu potensi dalam diri muncul dan dapat
+              dikembangkan, hingga akhirnya terbuka luas bagi pemuda/pemudi lainnya yang ingin bergabung. Bersama dengan
+              Heyjong, dibentuklah komunitas bernama Heyjong Community di akhir tahun 2024, dengan slogan
+              &quot;Let&apos;s Grow Together And Spread Good Vibes&quot;
             </p>
           </div>
         </div>
@@ -100,7 +97,7 @@ export default function AboutUspage() {
             <div className=''>
               <h5 className='text-lg md:text-2xl lg:text-3xl font-semibold text-black'>Ekosistem</h5>
               <p className={`text-base lg:text-lg text-black ${fraunces.className}`}>
-                To welcome dreamers, doers, and storytellers, giving them a place with us.
+                Membentuk lingkungan yang saling mendukung untuk tumbuh bersama.
               </p>
             </div>
           </div>
