@@ -56,7 +56,7 @@ export default function ActivityPage() {
         </div>
         <div className=''>
           <div className='px-5 lg:px-24'>
-            <h1 className='uppercase text-4xl font-bold text-black'>Visit</h1>
+            <h1 className='uppercase text-4xl font-bold text-black'>Impact</h1>
             <hr className='my-4 border-4 border-primary w-10' />
           </div>
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4'></div>
@@ -77,7 +77,7 @@ export default function ActivityPage() {
         </div>
         <div className=''>
           <div className='px-5 lg:px-24'>
-            <h1 className='uppercase text-4xl font-bold text-black'>Talkshow</h1>
+            <h1 className='uppercase text-4xl font-bold text-black'>Kajian & Talkshow</h1>
             <hr className='my-4 border-4 border-primary w-10' />
           </div>
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4'></div>
