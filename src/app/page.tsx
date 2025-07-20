@@ -17,15 +17,17 @@ export default function Home() {
     <div className=''>
       {/* <section className="bg-[url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center bg-fixed w-full h-screen"> */}
       <section className="bg-[url('/images/jongcamp.webp')] bg-cover bg-center bg-fixed w-full h-screen">
-        <div className='bg-black/30 h-full w-full flex items-center justify-center'>
-          <div className='w-3/4' data-aos='fade-up' data-aos-duration='1000'>
+        <div className='bg-black/30 h-full w-full px-5 md:px-0 flex items-center justify-center'>
+          <div className='w-full md:w-3/4' data-aos='fade-up' data-aos-duration='1000'>
             <p className='text-xs md:text-sm lg:text-base text-white uppercase font-bold'>
               WELCOME TO HEYJONG COMMUNITY
             </p>
-            <h1 className='font-semibold text-3xl md:text-[40px] lg:text-[90px] leading-24 text-white'>
+            <h1 className='font-semibold text-4xl md:text-[40px] lg:text-[90px] lg:leading-24 text-white'>
               Let&apos;s Grow Together & <br /> Spread Good Vibes
             </h1>
-            <p className={`mt-4 w-1/2 font-semibold text-sm md:text-base lg:text-lg text-white ${fraunces.className}`}>
+            <p
+              className={`mt-4 w-full lg:w-3/4 xl:w-1/2 font-semibold text-sm md:text-base lg:text-lg text-white ${fraunces.className}`}
+            >
               Heyjong Community merupakan wadah bagi para pemuda untuk mengembangkan potensi diri dan melatih data cipta
               sehingga mampu berperan aktif dalam menebarkan kebaikan baik di dunia maya dalam bentuk kreasi konten
               digital maupun dunia nyata dalam bentuk kegiatan-kegiatan sosial.

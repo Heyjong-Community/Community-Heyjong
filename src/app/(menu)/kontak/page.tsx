@@ -29,13 +29,13 @@ export default function ContactPage() {
   return (
     <div>
       <section className="bg-[url('/images/jongcamp.webp')] bg-cover bg-center bg-fixed w-full h-screen">
-        <div className='bg-black/30 h-full w-full flex items-center justify-center'>
-          <div className='w-3/4' data-aos='fade-up'>
-            <h1 className='font-semibold text-3xl md:text-[40px] lg:text-[90px] xl:text-8xl leading-24 text-white uppercase'>
+        <div className='bg-black/30 h-full w-full px-5 md:px-0 flex items-center justify-center'>
+          <div className='w-full md:w-3/4' data-aos='fade-up'>
+            <h1 className='font-semibold text-3xl md:text-[40px] lg:text-[90px] xl:text-8xl lg:leading-24 text-white uppercase'>
               Yuk, Ngobrol!
             </h1>
             <p
-              className={`mt-4 w-1/2 font-semibold text-sm md:text-base lg:text-lg xl:text-xl text-white ${sourceSans.className}`}
+              className={`mt-4 w-full lg:w-3/4 xl:w-1/2 font-semibold text-sm md:text-base lg:text-lg xl:text-xl text-white ${sourceSans.className}`}
             >
               Punya ide seru, unek-unek, atau cuma mau nyapa? Kami siap dengerin! Kirim aja pesanmu lewat form di
               bawah—jangan malu-malu!

@@ -16,23 +16,27 @@ export default function ActivityPage() {
   return (
     <div>
       <section className="bg-[url('/images/jongcamp.webp')] bg-cover bg-center bg-fixed w-full h-screen">
-        <div className='bg-black/30 h-full w-full flex items-center justify-center'>
-          <div className='w-3/4 xl:container' data-aos='fade-up' data-aos-duration='1000'>
-            <p className='text-xs md:text-sm lg:text-base text-white uppercase font-bold'>TENTANG HEYJONG COMMUNITY</p>
-            <h1 className='font-semibold text-3xl md:text-[40px] lg:text-[90px] leading-24 text-white'>
+        <div className='bg-black/30 h-full w-full px-5 md:px-0 flex items-center justify-center'>
+          <div className='w-full md:w-3/4' data-aos='fade-up' data-aos-duration='1000'>
+            <p className='text-xs md:text-sm lg:text-base text-white uppercase font-bold'>
+              WELCOME TO HEYJONG COMMUNITY
+            </p>
+            <h1 className='font-semibold text-4xl md:text-[40px] lg:text-[90px] lg:leading-24 text-white'>
               Let&apos;s Grow Together & <br /> Spread Good Vibes
             </h1>
-            <p className={`mt-4 w-1/2 font-semibold text-sm md:text-base lg:text-lg text-white ${fraunces.className}`}>
+            <p
+              className={`mt-4 w-full lg:w-3/4 xl:w-1/2 font-semibold text-sm md:text-base lg:text-lg text-white ${fraunces.className}`}
+            >
               Heyjong Community merupakan wadah bagi para pemuda untuk mengembangkan potensi diri dan melatih data cipta
               sehingga mampu berperan aktif dalam menebarkan kebaikan baik di dunia maya dalam bentuk kreasi konten
               digital maupun dunia nyata dalam bentuk kegiatan-kegiatan sosial.
             </p>
             <div className='mt-4 flex items-stretch gap-2.5'>
               <button className='uppercase font-bold text-xs md:text-sm lg:text-base bg-[#DF334D] text-white px-6 py-1 rounded-md '>
-                Ngonten
+                ABOUT US
               </button>
               <button className='uppercase font-bold text-xs md:text-sm lg:text-base bg-white text-black px-6 py-1 rounded-md '>
-                Impact
+                JOIN US
               </button>
             </div>
           </div>
