@@ -26,7 +26,7 @@ export default function Jongers({ photo, name, position, instagram, tiktok, link
       <Image src={`${photo}`} width={800} height={800} alt='jongers' className='w-full object-cover' />
       <div className='bg-white py-6 px-4 text-center'>
         <h4 className='text-black text-xl font-semibold'>{name}</h4>
-        <p className='text-base text-black'>{position}</p>
+        <p className='text-base text-black'>{`${position === 'Member' ? 'Jongers' : position}`}</p>
         <div className='mt-2 flex items-center justify-center gap-2'>
           <Link href={`${instagram}`}>
             <FaInstagram className='size-4' />
