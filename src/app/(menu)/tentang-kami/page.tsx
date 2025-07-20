@@ -30,17 +30,16 @@ export default function AboutUspage() {
               digital maupun dunia nyata dalam bentuk kegiatan-kegiatan sosial.
             </p>
             <div className='mt-4 flex items-stretch gap-2.5'>
-              <button className='uppercase font-bold text-xs md:text-sm lg:text-base bg-[#DF334D] text-white px-6 py-1 rounded-md '>
-                ABOUT US
-              </button>
-              <button className='uppercase font-bold text-xs md:text-sm lg:text-base bg-white text-black px-6 py-1 rounded-md '>
-                JOIN US
-              </button>
+              <Link href={`#story`}>
+                <button className='uppercase cursor-pointer font-bold text-xs md:text-sm lg:text-base bg-[#DF334D] text-white px-6 py-1 rounded-md '>
+                  Selengkapnya
+                </button>
+              </Link>
             </div>
           </div>
         </div>
       </section>
-      <section className='px-5 py-24'>
+      <section id='story' className='px-5 py-24'>
         <div className='container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8'>
           <div className=''>
             <Image
