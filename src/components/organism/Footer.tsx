@@ -35,10 +35,10 @@ export default function Footer() {
             <p className='font-extrabold text-white text-xl uppercase'>Kegiatan</p>
             <div className={`mt-3 ${fraunces.className}`}>
               <p className='text-white text-base font-semibold tracking-tight'>Seminar</p>
-              <p className='text-white text-base font-semibold tracking-tight'>Visit</p>
+              <p className='text-white text-base font-semibold tracking-tight'>Impact</p>
               <p className='text-white text-base font-semibold tracking-tight'>Charity</p>
               <p className='text-white text-base font-semibold tracking-tight'>Ngonten</p>
-              <p className='text-white text-base font-semibold tracking-tight'>Talkshow</p>
+              <p className='text-white text-base font-semibold tracking-tight'>Kajian & Talkshow</p>
             </div>
           </div>
           <div className=''>
