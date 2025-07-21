@@ -1,4 +1,16 @@
 type JongersType = {
+  photo?: string;
+  name: string;
+  nickname: string;
+  division?: string;
+  status?: string;
+  position: string;
+  instagram?: string;
+  tiktok?: string;
+  linkedin?: string;
+};
+
+type ListJongersType = {
   id: number;
   photo?: string;
   name: string;
@@ -11,9 +23,8 @@ type JongersType = {
   linkedin?: string;
 };
 
-export const listJongers: JongersType[] = [
+export const jongers: JongersType[] = [
   {
-    id: 1,
     photo: '/images/jongers/zadi.webp',
     name: 'Zadi Ahsanul Amal',
     nickname: 'Zadi',
@@ -25,19 +36,29 @@ export const listJongers: JongersType[] = [
     linkedin: '',
   },
   {
-    id: 2,
     photo: '/images/jongers/doley.webp',
     name: 'Hanif Abdillah',
     nickname: 'Hanif',
     division: 'Sekretaris',
     status: '',
-    position: 'Sekretaris',
+    position: 'Sekretaris 1',
     instagram: '',
     tiktok: '',
     linkedin: '',
   },
   {
-    id: 3,
+    photo:
+      'https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    name: 'Zahra Rahmalia N.',
+    nickname: 'Ara',
+    division: 'Sekretaris',
+    status: '',
+    position: 'Sekretaris 2',
+    instagram: '',
+    tiktok: '',
+    linkedin: '',
+  },
+  {
     photo: '/images/jongers/anun.webp',
     name: 'M. Ahsanul Amal',
     nickname: 'Anun',
@@ -49,7 +70,6 @@ export const listJongers: JongersType[] = [
     linkedin: '',
   },
   {
-    id: 4,
     photo: '/images/jongers/bilal.webp',
     name: 'M. Billal Nur Hadi',
     nickname: 'Billal',
@@ -61,7 +81,6 @@ export const listJongers: JongersType[] = [
     linkedin: '',
   },
   {
-    id: 5,
     photo: '/images/jongers/naya.webp',
     name: 'Inayah Syaffiyah R.',
     nickname: 'Naya',
@@ -73,7 +92,6 @@ export const listJongers: JongersType[] = [
     linkedin: '',
   },
   {
-    id: 6,
     photo: '/images/jongers/roro.webp',
     name: 'Rozanah',
     nickname: 'Roro',
@@ -85,7 +103,6 @@ export const listJongers: JongersType[] = [
     linkedin: '',
   },
   {
-    id: 7,
     photo: '/images/jongers/runi.webp',
     name: 'Khairunnisa Shalmah',
     nickname: 'Runi',
@@ -97,7 +114,6 @@ export const listJongers: JongersType[] = [
     linkedin: '',
   },
   {
-    id: 8,
     photo: '/images/jongers/rifky.webp',
     name: 'Mohammad Rifky',
     nickname: 'Rifki',
@@ -109,11 +125,9 @@ export const listJongers: JongersType[] = [
     linkedin: '',
   },
   {
-    id: 9,
-    photo:
-      'https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    photo: '/images/jongers/miftah.webp',
     name: 'Miftahul Jannah',
-    nickname: 'MIftah',
+    nickname: 'Miftah',
     division: 'Creative',
     status: 'Staff',
     position: 'Staff Creative',
@@ -122,7 +136,6 @@ export const listJongers: JongersType[] = [
     linkedin: '',
   },
   {
-    id: 10,
     photo: '/images/jongers/shidiq.webp',
     name: 'Azman Shidiq A.',
     nickname: 'Sidiq',
@@ -134,9 +147,7 @@ export const listJongers: JongersType[] = [
     linkedin: '',
   },
   {
-    id: 11,
-    photo:
-      'https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    photo: '/images/jongers/taqi.webp',
     name: 'Taqi Mundzir B.',
     nickname: 'Taqi',
     division: 'Event',
@@ -147,7 +158,6 @@ export const listJongers: JongersType[] = [
     linkedin: '',
   },
   {
-    id: 12,
     photo: '/images/jongers/ghina.webp',
     name: 'Ghina Asma A. M.',
     nickname: 'Ghina',
@@ -159,7 +169,6 @@ export const listJongers: JongersType[] = [
     linkedin: '',
   },
   {
-    id: 13,
     photo: '/images/jongers/jikri.webp',
     name: 'Dzikri A.',
     nickname: 'Jikri',
@@ -171,7 +180,6 @@ export const listJongers: JongersType[] = [
     linkedin: '',
   },
   {
-    id: 14,
     photo: '/images/jongers/ghyffara.webp',
     name: 'Ghyffara Aghaty P.',
     nickname: 'Ghyffara',
@@ -183,9 +191,7 @@ export const listJongers: JongersType[] = [
     linkedin: '',
   },
   {
-    id: 15,
-    photo:
-      'https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    photo: '/images/jongers/rina.webp',
     name: 'Nisrina F.',
     nickname: 'Rina',
     division: 'Event',
@@ -196,20 +202,6 @@ export const listJongers: JongersType[] = [
     linkedin: '',
   },
   {
-    id: 16,
-    photo:
-      'https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    name: 'Najla K.',
-    nickname: 'Najla',
-    division: 'Event',
-    status: 'Staff',
-    position: 'Staff Event',
-    instagram: '',
-    tiktok: '',
-    linkedin: '',
-  },
-  {
-    id: 17,
     photo: '/images/jongers/ridho.webp',
     name: 'Ridho Pratama',
     nickname: 'Ridho',
@@ -221,31 +213,28 @@ export const listJongers: JongersType[] = [
     linkedin: '',
   },
   {
-    id: 18,
     photo: '/images/jongers/jaguar.webp',
     name: 'M. Zikri Jaguar.',
     nickname: 'Jaguar',
-    division: 'Comdev',
+    division: 'Event',
     status: 'Staff',
-    position: 'Staff Comdev',
+    position: 'Staff Event',
     instagram: '',
     tiktok: '',
     linkedin: '',
   },
   {
-    id: 19,
     photo: '/images/jongers/eja.webp',
     name: 'Zahid Faqih A. R.',
     nickname: 'Eja',
-    division: '',
-    status: 'Member',
-    position: 'Member',
+    division: 'Event',
+    status: 'Staff',
+    position: 'Staff Event',
     instagram: '',
     tiktok: '',
     linkedin: '',
   },
   {
-    id: 20,
     photo: '/images/jongers/tao.webp',
     name: 'Tasnim A.',
     nickname: 'Tao',
@@ -257,7 +246,6 @@ export const listJongers: JongersType[] = [
     linkedin: '',
   },
   {
-    id: 21,
     photo: '/images/jongers/ia.webp',
     name: 'Fatihah S.',
     nickname: 'Ia',
@@ -269,7 +257,6 @@ export const listJongers: JongersType[] = [
     linkedin: '',
   },
   {
-    id: 22,
     photo: '/images/jongers/inaya.webp',
     name: 'Putri Inayati.',
     nickname: 'Inaya',
@@ -281,32 +268,29 @@ export const listJongers: JongersType[] = [
     linkedin: '',
   },
   {
-    id: 23,
     photo: '/images/jongers/rahma.webp',
     name: 'Rahma A.',
     nickname: 'Rahma',
-    division: '',
-    status: 'Member',
-    position: 'Member',
+    division: 'Event',
+    status: 'Staff',
+    position: 'Staff Event',
     instagram: '',
     tiktok: '',
     linkedin: '',
   },
   {
-    id: 24,
     photo:
       'https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     name: 'Farah',
     nickname: 'Farah',
-    division: '',
-    status: 'Member',
-    position: 'Member',
+    division: 'Event',
+    status: 'Staff',
+    position: 'Staff Event',
     instagram: '',
     tiktok: '',
     linkedin: '',
   },
   {
-    id: 25,
     photo: '/images/jongers/jia.webp',
     name: 'Nazria',
     nickname: 'Jia',
@@ -318,7 +302,6 @@ export const listJongers: JongersType[] = [
     linkedin: '',
   },
   {
-    id: 26,
     photo: '/images/jongers/tanti.webp',
     name: 'Octanty M.',
     nickname: 'Tanti',
@@ -330,7 +313,6 @@ export const listJongers: JongersType[] = [
     linkedin: '',
   },
   {
-    id: 27,
     photo: '/images/jongers/khalisa.webp',
     name: 'Khalisa',
     nickname: 'Khalisa',
@@ -341,4 +323,21 @@ export const listJongers: JongersType[] = [
     tiktok: '',
     linkedin: '',
   },
+  {
+    photo:
+      'https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    name: 'Najla K.',
+    nickname: 'Najla',
+    division: '',
+    status: 'Member',
+    position: 'Member',
+    instagram: '',
+    tiktok: '',
+    linkedin: '',
+  },
 ];
+
+export const listJongers: ListJongersType[] = jongers.map((item, index) => ({
+  id: index + 1,
+  ...item,
+}));

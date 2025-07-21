@@ -1,7 +1,7 @@
 import { listJongers } from './jongers';
 
 export const managerKomunitas = listJongers.find((j) => j.division === 'Manager');
-export const sekretaris = listJongers.find((j) => j.division === 'Sekretaris');
+export const sekretaris = listJongers.filter((j) => j.division === 'Sekretaris');
 export const bendahara = listJongers.find((j) => j.division === 'Bendahara');
 export const kadivCreative = listJongers.filter((j) => j.division === 'Creative' && j.status === 'Kadiv');
 export const staffCreative = listJongers.filter((j) => j.division === 'Creative' && j.status === 'Staff');
