@@ -51,7 +51,7 @@ export default function Footer() {
                 rel='noopener noreferrer'
               />
               <SocialIcon
-                url='https://www.tiktok.com/heyjong_community'
+                url='https://www.tiktok.com/@heyjongcommunity'
                 style={{ height: 40, width: 40 }}
                 target='_blank'
                 rel='noopener noreferrer'
