@@ -105,7 +105,7 @@ export default function AboutUspage() {
             <div className=''>
               <h5 className='text-lg md:text-2xl lg:text-3xl font-semibold text-black'>Kritis</h5>
               <p className={`text-base lg:text-lg text-black ${fraunces.className}`}>
-                To welcome dreamers, doers, and storytellers, giving them a place with us.
+                Mendorong pola pikir reflektif dan solutif dalam menyikapi isu-isu di sekitar.
               </p>
             </div>
           </div>
@@ -114,7 +114,7 @@ export default function AboutUspage() {
             <div className=''>
               <h5 className='text-lg md:text-2xl lg:text-3xl font-semibold text-black'>Aktif</h5>
               <p className={`text-base lg:text-lg text-black ${fraunces.className}`}>
-                To welcome dreamers, doers, and storytellers, giving them a place with us.
+                Mengajak untuk terlibat langsung dalam aksi nyata yang positif dan membangun.
               </p>
             </div>
           </div>
@@ -123,7 +123,7 @@ export default function AboutUspage() {
             <div className=''>
               <h5 className='text-lg md:text-2xl lg:text-3xl font-semibold text-black'>Berdampak</h5>
               <p className={`text-base lg:text-lg text-black ${fraunces.className}`}>
-                To welcome dreamers, doers, and storytellers, giving them a place with us.
+                Mewujudkan perubahan yang dirasakan nyata oleh masyarakat melalui karya dan kontribusi.
               </p>
             </div>
           </div>
