@@ -27,7 +27,7 @@ export default function ActivityPage() {
             <p
               className={`mt-4 w-full lg:w-3/4 xl:w-1/2 font-semibold text-sm md:text-base lg:text-lg text-white ${fraunces.className}`}
             >
-              Heyjong Community merupakan wadah bagi para pemuda untuk mengembangkan potensi diri dan melatih data cipta
+              Heyjong Community merupakan wadah bagi para pemuda untuk mengembangkan potensi diri dan melatih daya cipta
               sehingga mampu berperan aktif dalam menebarkan kebaikan baik di dunia maya dalam bentuk kreasi konten
               digital maupun dunia nyata dalam bentuk kegiatan-kegiatan sosial.
             </p>
