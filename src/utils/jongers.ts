@@ -47,8 +47,7 @@ export const jongers: JongersType[] = [
     linkedin: '',
   },
   {
-    photo:
-      'https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    photo: '/images/jongers/ara.webp',
     name: 'Zahra Rahmalia N.',
     nickname: 'Ara',
     division: 'Sekretaris',
@@ -279,8 +278,7 @@ export const jongers: JongersType[] = [
     linkedin: '',
   },
   {
-    photo:
-      'https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    photo: '/images/jongers/farah.webp',
     name: 'Farah',
     nickname: 'Farah',
     division: 'Event',

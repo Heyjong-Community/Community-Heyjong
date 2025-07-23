@@ -48,7 +48,7 @@ export default function JongersPage() {
       </div>
       <div id='creative' className='container px-5 mx-auto mb-20'>
         <div className=''>
-          <h1 className='uppercase text-3xl font-bold text-black'>Divisi Creative</h1>
+          <h1 className='uppercase text-3xl font-bold text-black'>Divisi Public Relation</h1>
           <hr className='my-4 border-4 border-primary w-10' />
         </div>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
