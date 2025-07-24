@@ -151,7 +151,7 @@ export default function Home() {
                   Gass Join
                 </button>
               </Link>
-              <Link href={`#`} target='_blank' rel='noopener noreferrer'>
+              <Link href={`https://wa.me/62895328310378`} target='_blank' rel='noopener noreferrer'>
                 <button className='mt-6 uppercase cursor-pointer font-bold text-xs md:text-sm lg:text-lg bg-white text-black px-6 py-1 rounded-md '>
                   Tanya-tanya Dulu
                 </button>
