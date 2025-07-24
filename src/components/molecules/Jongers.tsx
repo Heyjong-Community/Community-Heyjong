@@ -8,22 +8,36 @@ import 'aos/dist/aos.css';
 interface JongersProps {
   photo?: string;
   name: string;
+  gender: 'Men' | 'Women';
   position: string;
   instagram?: string;
   tiktok?: string;
   linkedin?: string;
 }
 
-export default function Jongers({ photo, name, position, instagram, tiktok, linkedin }: JongersProps) {
+export default function Jongers({ photo, name, gender, position, instagram, tiktok, linkedin }: JongersProps) {
   useEffect(() => {
     AOS.init({
       delay: 100,
     });
   }, []);
   return (
-    // <div id='card-jongers' className='w-40 md:w-60 xl:w-96 h-auto'>
     <div id='card-jongers' className='' data-aos='flip-left' data-aos-duration='2000'>
-      <Image src={`${photo}`} width={800} height={800} alt='jongers' className='w-full object-cover' />
+      {photo ? (
+        <Image src={`${photo}`} width={800} height={800} alt='jongers' className='w-full object-cover' />
+      ) : (
+        <div className="aspect-square w-full overflow-hidden bg-[url('/images/background.webp')] bg-cover">
+          <div className='bg-primary/40 w-full h-full'>
+            <Image
+              src={gender === 'Men' ? '/images/jong.webp' : '/images/dinda.webp'}
+              width={600}
+              height={600}
+              alt='jongers'
+              className='object-cover'
+            />
+          </div>
+        </div>
+      )}
       <div className='bg-white py-6 px-4 text-center'>
         <h4 className='text-black text-xl font-semibold'>{name}</h4>
         <p className='text-base text-black'>{`${position === 'Member' ? 'Jongers' : position}`}</p>

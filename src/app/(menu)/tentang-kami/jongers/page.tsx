@@ -37,12 +37,26 @@ export default function JongersPage() {
             <Jongers
               photo={managerKomunitas.photo}
               name={managerKomunitas.nickname}
+              gender={managerKomunitas.gender}
               position={managerKomunitas.position}
             />
           )}
-          {bendahara && <Jongers photo={bendahara.photo} name={bendahara.nickname} position={bendahara.position} />}
+          {bendahara && (
+            <Jongers
+              photo={bendahara.photo}
+              name={bendahara.nickname}
+              gender={bendahara.gender}
+              position={bendahara.position}
+            />
+          )}
           {sekretaris.map((jong) => (
-            <Jongers key={jong.id} photo={jong.photo} name={jong.nickname} position={jong.position} />
+            <Jongers
+              key={jong.id}
+              photo={jong.photo}
+              name={jong.nickname}
+              gender={jong.gender}
+              position={jong.position}
+            />
           ))}
         </div>
       </div>
@@ -53,7 +67,13 @@ export default function JongersPage() {
         </div>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
           {orderedCreative.map((jong) => (
-            <Jongers key={jong.id} photo={jong.photo} name={jong.nickname} position={jong.position} />
+            <Jongers
+              key={jong.id}
+              photo={jong.photo}
+              name={jong.nickname}
+              gender={jong.gender}
+              position={jong.position}
+            />
           ))}
         </div>
       </div>
@@ -64,7 +84,13 @@ export default function JongersPage() {
         </div>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
           {orderedEvent.map((jong) => (
-            <Jongers key={jong.id} photo={jong.photo} name={jong.nickname} position={jong.position} />
+            <Jongers
+              key={jong.id}
+              photo={jong.photo}
+              name={jong.nickname}
+              gender={jong.gender}
+              position={jong.position}
+            />
           ))}
         </div>
       </div>
@@ -75,7 +101,13 @@ export default function JongersPage() {
         </div>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
           {orderedComdev.map((jong) => (
-            <Jongers key={jong.id} photo={jong.photo} name={jong.nickname} position={jong.position} />
+            <Jongers
+              key={jong.id}
+              photo={jong.photo}
+              name={jong.nickname}
+              gender={jong.gender}
+              position={jong.position}
+            />
           ))}
         </div>
       </div>
@@ -86,7 +118,13 @@ export default function JongersPage() {
         </div>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
           {member.map((jong) => (
-            <Jongers key={jong.id} photo={jong.photo} name={jong.nickname} position={jong.position} />
+            <Jongers
+              key={jong.id}
+              photo={jong.photo}
+              name={jong.nickname}
+              gender={jong.gender}
+              position={jong.position}
+            />
           ))}
         </div>
       </div>
