@@ -3,6 +3,7 @@
 import { fraunces } from '@/utils/fonts';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect } from 'react';
 
@@ -43,10 +44,56 @@ export default function Home() {
         </div>
       </section>
       <section className='h-screen'></section>
+      <section className='container px-5 py-24 mx-auto'>
+        <div className='text-center'>
+          <p className={`uppercase text-primary text-base font-bold ${fraunces.className}`}>#StayConnected</p>
+          <h2 className='text-black text-3xl md:text-4xl lg:text-6xl font-bold'>Yuk, Kepoin Sosial Media Kami!</h2>
+        </div>
+        <div className='mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
+          <div className='flex items-center justify-center rounded-2xl bg-gradient-to-br from-yellow-400 via-pink-500 to-purple-600'>
+            <div className='py-8'>
+              <Image
+                src={`/icons/ic-instagram.svg`}
+                width={400}
+                height={400}
+                alt='instagram'
+                className='size-20 mx-auto'
+              />
+              <Link href={`#`}>
+                <button className='mt-8 uppercase cursor-pointer font-bold text-xs md:text-sm lg:text-lg bg-white px-6 py-1 rounded-md '>
+                  <span className='bg-gradient-to-br from-yellow-400 via-pink-500 to-purple-600 bg-clip-text text-transparent'>
+                    Selengkapnya
+                  </span>
+                </button>
+              </Link>
+            </div>
+          </div>
+          <div className='flex items-center justify-center rounded-2xl bg-black'>
+            <div className='py-8'>
+              <Image src={`/icons/ic-tiktok.svg`} width={400} height={400} alt='tiktok' className='size-20 mx-auto' />
+              <Link href={`#`}>
+                <button className='mt-8 uppercase cursor-pointer font-bold text-xs md:text-sm lg:text-lg bg-white px-6 py-1 rounded-md '>
+                  <span className='bg-black bg-clip-text text-transparent'>Selengkapnya</span>
+                </button>
+              </Link>
+            </div>
+          </div>
+          <div className='flex items-center justify-center rounded-2xl bg-[#5865F2]'>
+            <div className='py-8'>
+              <Image src={`/icons/ic-discord.svg`} width={400} height={400} alt='discord' className='size-20 mx-auto' />
+              <Link href={`#`}>
+                <button className='mt-8 uppercase cursor-pointer font-bold text-xs md:text-sm lg:text-lg bg-white px-6 py-1 rounded-md '>
+                  <span className='bg-[#5865F2] bg-clip-text text-transparent'>Selengkapnya</span>
+                </button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
       <section className="bg-[url('/images/jongcamp.webp')] bg-cover bg-bottom">
         <div className='py-32 flex items-center justify-center bg-black/30'>
           <div className=''>
-            <h1 className='uppercase text-white text-6xl text-center font-bold'>Come Join Us!</h1>
+            <h1 className='uppercase text-white text-6xl text-center font-bold'>Ayo Bergabung Ke Heyjong Community!</h1>
             <div className='flex justify-center items-center gap-3'>
               <Link href={`https://heyjong.id/oprecMember`} target='_blank' rel='noopener noreferrer'>
                 <button className='mt-6 uppercase cursor-pointer font-bold text-xs md:text-sm lg:text-lg bg-[#DF334D] text-white px-6 py-1 rounded-md '>
