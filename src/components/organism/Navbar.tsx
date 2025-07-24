@@ -13,8 +13,6 @@ export default function Navbar() {
   const [hasScrolled, setHasScrolled] = useState<boolean>(false);
   const route = usePathname();
 
-  console.log('ini route path nya', route);
-
   const handleOpenMenu = () => {
     setOpenMenu(!openMenu);
   };

@@ -136,11 +136,7 @@ export default function ContactPage() {
         <iframe
           src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.7180971389425!2d106.8611117748039!3d-6.300723993688398!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ed006432eb31%3A0xbeca16fdc7386591!2sSekretariat%20Heyjong%20Community!5e0!3m2!1sid!2sid!4v1746205964738!5m2!1sid!2sid'
           className='h-[500px] w-full lg:h-[450px]'
-          // width="600"
-          // height="450"
-          // allowfullscreen=""
           loading='lazy'
-          // referrerpolicy="no-referrer-when-downgrade"
         ></iframe>
       </section>
     </div>
