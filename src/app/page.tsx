@@ -1,5 +1,6 @@
 'use client';
 
+import { listContentHJ } from '@/utils/content';
 import { fraunces } from '@/utils/fonts';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -43,13 +44,53 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className='h-screen'></section>
+      <section className='container px-5 py-24 mx-auto'>
+        <div className='text-center'>
+          <p className={`uppercase text-primary text-base font-bold ${fraunces.className}`}>What&apos;s New</p>
+          <h2 className='text-black text-3xl md:text-4xl lg:text-6xl font-bold'>RAGU By Heyjong Community</h2>
+        </div>
+        <div className='mt-10'>
+          <video width='100%' height='auto' controls muted playsInline preload='metadata' className='rounded-xl'>
+            <source src='https://nineteeninnovation.my.id/hjc/videos/compro.mp4' type='video/mp4' />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </section>
+      <section className='container px-5 py-24 mx-auto'>
+        <div className='text-center'>
+          <p className={`uppercase text-primary text-base font-bold ${fraunces.className}`}>
+            Heyjong Community In Action
+          </p>
+          <h2 className='text-black text-3xl md:text-4xl lg:text-6xl font-bold'>Yuk Kepoin Keseruannya!</h2>
+        </div>
+        <div className='mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4'>
+          {listContentHJ.map((content) => (
+            <div key={content.id} className=''>
+              <video
+                width='100%'
+                height='auto'
+                autoPlay
+                muted
+                playsInline
+                loop
+                preload='metadata'
+                className='rounded-3xl'
+              >
+                <source src={`${content.url}`} type='video/mp4' />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          ))}
+        </div>
+      </section>
       <section className='container px-5 py-24 mx-auto'>
         <div className='text-center'>
           <p className={`uppercase text-primary text-base font-bold ${fraunces.className}`}>#StayConnected</p>
-          <h2 className='text-black text-3xl md:text-4xl lg:text-6xl font-bold'>Yuk, Kepoin Sosial Media Kami!</h2>
+          <h2 className='text-black text-3xl md:text-4xl lg:text-6xl font-bold'>
+            Jangan Ketinggalan, Follow Sekarang!
+          </h2>
         </div>
-        <div className='mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
+        <div className='mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4'>
           <div className='flex items-center justify-center rounded-2xl bg-gradient-to-br from-yellow-400 via-pink-500 to-purple-600'>
             <div className='py-8'>
               <Image
@@ -59,7 +100,7 @@ export default function Home() {
                 alt='instagram'
                 className='size-20 mx-auto'
               />
-              <Link href={`#`}>
+              <Link href={`https://www.instagram.com/heyjong_community`} target='_blank' rel='noopener noreferrer'>
                 <button className='mt-8 uppercase cursor-pointer font-bold text-xs md:text-sm lg:text-lg bg-white px-6 py-1 rounded-md '>
                   <span className='bg-gradient-to-br from-yellow-400 via-pink-500 to-purple-600 bg-clip-text text-transparent'>
                     Selengkapnya
@@ -71,9 +112,19 @@ export default function Home() {
           <div className='flex items-center justify-center rounded-2xl bg-black'>
             <div className='py-8'>
               <Image src={`/icons/ic-tiktok.svg`} width={400} height={400} alt='tiktok' className='size-20 mx-auto' />
-              <Link href={`#`}>
+              <Link href={`https://www.tiktok.com/@heyjongcommunity`} target='_blank' rel='noopener noreferrer'>
                 <button className='mt-8 uppercase cursor-pointer font-bold text-xs md:text-sm lg:text-lg bg-white px-6 py-1 rounded-md '>
                   <span className='bg-black bg-clip-text text-transparent'>Selengkapnya</span>
+                </button>
+              </Link>
+            </div>
+          </div>
+          <div className='flex items-center justify-center rounded-2xl bg-[#FF0033]'>
+            <div className='py-8'>
+              <Image src={`/icons/ic-youtube.svg`} width={400} height={400} alt='discord' className='size-20 mx-auto' />
+              <Link href={`#`} target='_blank' rel='noopener noreferrer'>
+                <button className='mt-8 uppercase cursor-pointer font-bold text-xs md:text-sm lg:text-lg bg-white px-6 py-1 rounded-md '>
+                  <span className='bg-[#FF0033] bg-clip-text text-transparent'>Selengkapnya</span>
                 </button>
               </Link>
             </div>
@@ -81,7 +132,7 @@ export default function Home() {
           <div className='flex items-center justify-center rounded-2xl bg-[#5865F2]'>
             <div className='py-8'>
               <Image src={`/icons/ic-discord.svg`} width={400} height={400} alt='discord' className='size-20 mx-auto' />
-              <Link href={`#`}>
+              <Link href={`https://discord.gg/VNW7EPM7`} target='_blank' rel='noopener noreferrer'>
                 <button className='mt-8 uppercase cursor-pointer font-bold text-xs md:text-sm lg:text-lg bg-white px-6 py-1 rounded-md '>
                   <span className='bg-[#5865F2] bg-clip-text text-transparent'>Selengkapnya</span>
                 </button>
