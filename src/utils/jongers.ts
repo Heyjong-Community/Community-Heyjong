@@ -362,6 +362,30 @@ export const jongers: JongersType[] = [
     tiktok: '',
     linkedin: '',
   },
+  {
+    photo: '',
+    name: 'Maysarah',
+    nickname: 'Sarah',
+    gender: 'Women',
+    division: '',
+    status: 'Member',
+    position: 'Member',
+    instagram: '',
+    tiktok: '',
+    linkedin: '',
+  },
+  {
+    photo: '',
+    name: 'Afaf Hilmi',
+    nickname: 'Hilmi',
+    gender: 'Men',
+    division: '',
+    status: 'Member',
+    position: 'Member',
+    instagram: '',
+    tiktok: '',
+    linkedin: '',
+  },
 ];
 
 export const listJongers: ListJongersType[] = jongers.map((item, index) => ({
