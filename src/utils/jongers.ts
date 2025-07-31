@@ -364,6 +364,18 @@ export const jongers: JongersType[] = [
   },
   {
     photo: '',
+    name: 'Najwa Ulya',
+    nickname: 'Joel',
+    gender: 'Women',
+    division: '',
+    status: 'Member',
+    position: 'Member',
+    instagram: '',
+    tiktok: '',
+    linkedin: '',
+  },
+  {
+    photo: '',
     name: 'Maysarah',
     nickname: 'Sarah',
     gender: 'Women',
