@@ -13,6 +13,15 @@ const barlowCondensed = Barlow_Condensed({
 export const metadata: Metadata = {
   title: 'Heyjong Community',
   description: "Heyjong Community | Let's Grow Together & Spread Good Vibes",
+  keywords: ['heyjong', 'heyjong community', 'komunitas heyjong'],
+  openGraph: {
+    title: 'Heyjong Community',
+    description: '',
+    url: 'https://community.heyjong.id/',
+    siteName: 'Heyjong Community',
+    locale: 'id_ID',
+    type: 'website',
+  },
 };
 
 export default function RootLayout({
