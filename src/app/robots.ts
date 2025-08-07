@@ -1,10 +1,18 @@
-export default function robots() {
+import type { MetadataRoute } from 'next';
+
+export default function robots(): MetadataRoute.Robots {
   return {
-    rules: {
-      userAgent: '*',
-      allow: '/',
-      disallow: ['/admin/', '/private/'],
-    },
-    sitemap: 'https://website-anda.com/sitemap.xml',
+    rules: [
+      {
+        userAgent: 'Googlebot',
+        allow: ['/'],
+        disallow: '/private/',
+      },
+      {
+        userAgent: ['Applebot', 'Bingbot'],
+        disallow: ['/'],
+      },
+    ],
+    sitemap: 'https://community.heyjong.id//sitemap.xml',
   };
 }
