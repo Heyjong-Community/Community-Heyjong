@@ -3,6 +3,7 @@ import { Barlow_Condensed } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/organism/Navbar';
 import Footer from '@/components/organism/Footer';
+import { Analytics } from '@vercel/analytics/next';
 
 const barlowCondensed = Barlow_Condensed({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
@@ -38,6 +39,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
