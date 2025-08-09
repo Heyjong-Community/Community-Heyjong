@@ -1,7 +1,7 @@
 'use client';
 
 import { fraunces } from '@/utils/fonts';
-import { seminarGallery } from '@/utils/gallery';
+import { charityGallery, impactGallery, seminarGallery } from '@/utils/gallery';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Image from 'next/image';
@@ -59,14 +59,29 @@ export default function ActivityPage() {
             <h1 className='uppercase text-4xl font-bold text-black'>Impact</h1>
             <hr className='my-4 border-4 border-primary w-10' />
           </div>
-          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4'></div>
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4'>
+            {impactGallery.map((src, index) => (
+              <Image key={index} src={src} width={500} height={500} alt='impact' className='w-full h-full' />
+            ))}
+          </div>
         </div>
         <div className=''>
           <div className='px-5 lg:px-24'>
             <h1 className='uppercase text-4xl font-bold text-black'>Charity</h1>
             <hr className='my-4 border-4 border-primary w-10' />
           </div>
-          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4'></div>
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4'>
+            {charityGallery.map((src, index) => (
+              <Image
+                key={index}
+                src={src}
+                width={500}
+                height={500}
+                alt='charity'
+                className='w-full h-full object-cover'
+              />
+            ))}
+          </div>
         </div>
         <div className=''>
           <div className='px-5 lg:px-24'>
