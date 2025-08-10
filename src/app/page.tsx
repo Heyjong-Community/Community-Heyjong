@@ -44,15 +44,37 @@ export default function Home() {
         </div>
       </section>
       <section className='container px-5 py-24 mx-auto'>
-        <div className='text-center'>
-          <p className={`uppercase text-primary text-base font-bold ${fraunces.className}`}>What&apos;s New</p>
-          <h2 className='text-black text-3xl md:text-4xl lg:text-6xl font-bold'>RAGU By Heyjong Community</h2>
-        </div>
-        <div className='mt-10'>
-          <video width='100%' height='auto' controls muted playsInline preload='metadata' className='rounded-xl'>
-            <source src='https://nineteeninnovation.my.id/hjc/videos/compro.mp4' type='video/mp4' />
-            Your browser does not support the video tag.
-          </video>
+        <p className={`uppercase text-primary text-base text-center font-bold ${fraunces.className}`}>
+          What&apos;s New
+        </p>
+        <div className='mt-8 grid grid-cols-1 md:grid-cols-2 gap-12'>
+          <div className=''>
+            <div className='text-center'>
+              <h2 className='text-black text-3xl md:text-4xl lg:text-6xl font-bold'>
+                Workshop: Fundamental Content Creation
+              </h2>
+            </div>
+            <div className='mt-8'>
+              <Image
+                src={`/images/new-workshop.webp`}
+                width={750}
+                height={1000}
+                alt='workshop'
+                className='mx-auto h-1/2 w-auto'
+              />
+            </div>
+          </div>
+          <div className=''>
+            <div className='text-center'>
+              <h2 className='text-black text-3xl md:text-4xl lg:text-6xl font-bold'>RAGU By Heyjong Community</h2>
+            </div>
+            <div className='mt-10'>
+              <video width='100%' height='auto' controls muted playsInline preload='metadata' className='rounded-xl'>
+                <source src='https://nineteeninnovation.my.id/hjc/videos/compro.mp4' type='video/mp4' />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
         </div>
       </section>
       <section className='container px-5 py-24 mx-auto'>
@@ -143,7 +165,9 @@ export default function Home() {
       <section className="bg-[url('/images/jongcamp.webp')] bg-cover bg-bottom">
         <div className='py-32 flex items-center justify-center bg-black/30'>
           <div className=''>
-            <h1 className='uppercase text-white text-6xl text-center font-bold'>Ayo Bergabung Ke Heyjong Community!</h1>
+            <h1 className='uppercase text-white text-3xl lg:text-6xl text-center font-bold'>
+              Ayo Bergabung Ke Heyjong Community!
+            </h1>
             <div className='flex justify-center items-center gap-3'>
               <Link href={`https://heyjong.id/oprecMember`} target='_blank' rel='noopener noreferrer'>
                 <button className='mt-6 uppercase cursor-pointer font-bold text-xs md:text-sm lg:text-lg bg-[#DF334D] text-white px-6 py-1 rounded-md '>
