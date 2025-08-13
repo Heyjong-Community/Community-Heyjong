@@ -1,8 +1,6 @@
 import type { Metadata } from 'next';
 import { Barlow_Condensed } from 'next/font/google';
-import './globals.css';
-import Navbar from '@/components/organism/Navbar';
-import Footer from '@/components/organism/Footer';
+import '../globals.css';
 import { Analytics } from '@vercel/analytics/next';
 
 const barlowCondensed = Barlow_Condensed({
@@ -25,7 +23,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default function AuthLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -36,9 +34,7 @@ export default function RootLayout({
         <link rel='icon' type='image/png' href='/images/logo-color.png' />
       </head>
       <body className={`${barlowCondensed.className} antialiased`}>
-        <Navbar />
         {children}
-        <Footer />
         <Analytics />
       </body>
     </html>
