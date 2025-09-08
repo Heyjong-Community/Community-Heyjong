@@ -11,16 +11,16 @@ import SubScript from '@tiptap/extension-subscript';
 import { MantineProvider } from '@mantine/core';
 import '@mantine/core/styles.css';
 import '@mantine/tiptap/styles.css';
+import { useEffect, useRef } from 'react';
 
 type Props = {
   value: string;
   onChange: (val: string) => void;
 };
 
-// const content =
-//   '<h2 style="text-align: center;">Welcome to Mantine rich text editor</h2><p><code>RichTextEditor</code> component focuses on usability and is designed to be as simple as possible to bring a familiar editing experience to regular users. <code>RichTextEditor</code> is based on <a href="https://tiptap.dev/" rel="noopener noreferrer" target="_blank">Tiptap.dev</a> and supports all of its features:</p><ul><li>General text formatting: <strong>bold</strong>, <em>italic</em>, <u>underline</u>, <s>strike-through</s> </li><li>Headings (h1-h6)</li><li>Sub and super scripts (<sup>&lt;sup /&gt;</sup> and <sub>&lt;sub /&gt;</sub> tags)</li><li>Ordered and bullet lists</li><li>Text align&nbsp;</li><li>And all <a href="https://tiptap.dev/extensions" target="_blank" rel="noopener noreferrer">other extensions</a></li></ul>';
-
 export default function RichTextEditorForm({ value, onChange }: Props) {
+  const debounceRef = useRef<number | null>(null);
+
   const editor = useEditor({
     extensions: [
       StarterKit,
@@ -34,9 +34,39 @@ export default function RichTextEditorForm({ value, onChange }: Props) {
     content: value || '',
     immediatelyRender: false,
     onUpdate: ({ editor }) => {
-      onChange(editor.getHTML()); // sync ke parent
+      // onChange(editor.getHTML()); // sync ke parent
+      const html = editor.getHTML();
+      if (debounceRef.current) window.clearTimeout(debounceRef.current);
+      debounceRef.current = window.setTimeout(() => {
+        onChange(html);
+      }, 150);
     },
   });
+
+  useEffect(() => {
+    if (!editor) return;
+
+    // if value is null/undefined/empty string, we still might want to set empty content
+    const current = editor.getHTML();
+
+    // only set if different — prevents overwriting while typing
+    if (value !== current) {
+      // second arg `false` prevents emitting an onUpdate (so we avoid loops)
+      editor.commands.setContent(value || '', { emitUpdate: false });
+    }
+  }, [editor, value]);
+
+  useEffect(() => {
+    return () => {
+      // cleanup debounce on unmount
+      if (debounceRef.current) window.clearTimeout(debounceRef.current);
+    };
+  }, []);
+  // useEffect(() => {
+  //   if (editor && value) {
+  //     editor.commands.setContent(value);
+  //   }
+  // }, [editor, value]);
 
   return (
     <MantineProvider>

@@ -25,7 +25,7 @@ export default function AddArticlePage() {
   const { addArticle } = useArticles();
 
   useEffect(() => {
-    fetchCategories(); // ambil data kategori pertama kali
+    fetchCategories();
   }, [fetchCategories]);
 
   const generateSlug = (text: string) => {
@@ -43,7 +43,7 @@ export default function AddArticlePage() {
         return {
           ...prev,
           title: value,
-          slug: generateSlug(value), // auto isi slug
+          slug: generateSlug(value),
         };
       }
       return { ...prev, [name]: value };
@@ -53,16 +53,6 @@ export default function AddArticlePage() {
   const handleEditorChange = (value: string) => {
     setFormData((prev) => ({ ...prev, content: value }));
   };
-
-  // const handleThumbnailPreview = (e: ChangeEvent<HTMLInputElement>) => {
-  //   const file = e.target.files?.[0];
-  //   if (!file) return;
-  //   setFormData((prev) => ({ ...prev, thumbnail: file }));
-
-  //   const reader = new FileReader();
-  //   reader.onload = () => setThumbnailPreview(reader.result as string);
-  //   reader.readAsDataURL(file);
-  // };
 
   const handleThumbnailChange = (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -134,24 +124,17 @@ export default function AddArticlePage() {
           : null,
       });
 
-      // SOLUSI 1: Kirim payload object seperti sebelumnya (paling sederhana)
       const payload: NewArticlePayload = {
         title: formData.title,
         slug: formData.slug,
         content: formData.content,
         category_id: formData.category_id,
-        thumbnail: formData.thumbnail, // File object akan dikirim langsung
+        thumbnail: formData.thumbnail,
       };
 
       await addArticle(payload);
 
       toast.success('Berhasil tambah artikel');
-
-      // console.log('Payload kirim:', {
-      //   ...formData,
-      //   thumbnail: formData.thumbnail?.name,
-      //   contentLength: formData.content.length,
-      // });
 
       setFormData({
         title: '',
@@ -162,7 +145,6 @@ export default function AddArticlePage() {
       });
       setThumbnailPreview(null);
 
-      // Reset file input
       const fileInput = document.getElementById('thumbnail') as HTMLInputElement;
       if (fileInput) fileInput.value = '';
 
@@ -180,8 +162,7 @@ export default function AddArticlePage() {
       <div className='flex flex-row items-center justify-between'>
         <div className='my-5 flex items-center gap-2'>
           <p className='text-2xl font-bold'>Tambah Artikel</p>
-          {/* <span className='text-xs bg-gray-300 text-black font-medium rounded-sm py-1 px-2'>unpublished</span> */}
-          <span className='text-xs bg-green-500 text-white font-medium rounded-sm py-1 px-2'>published</span>
+          <span className='text-xs bg-gray-300 text-black font-medium rounded-sm py-1 px-2'>unpublished</span>
         </div>
       </div>
       <form onSubmit={handleSubmit} className='space-y-3'>

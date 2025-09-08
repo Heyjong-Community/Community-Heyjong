@@ -1,4 +1,11 @@
-import { addNewArticle, GetAllArticles } from '@/services/article';
+import {
+  addNewArticle,
+  GetAllArticles,
+  GetArticleById,
+  publishArticleService,
+  unPublishArticleService,
+  updateArticleService,
+} from '@/services/article';
 import { Article, NewArticlePayload } from '@/types/article';
 import { Pagination } from '@/types/pagination';
 import { useCallback, useState } from 'react';
@@ -24,6 +31,21 @@ export function useArticles() {
     }
   }, []);
 
+  const getArticleById = useCallback(async (id: string) => {
+    setLoading(true);
+    setError(null);
+
+    try {
+      const article = await GetArticleById(id);
+      return article;
+    } catch (error) {
+      setError((error as Error).message);
+      throw error;
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+
   const addArticle = async (data: NewArticlePayload) => {
     try {
       const newArticle = await addNewArticle(data);
@@ -36,5 +58,60 @@ export function useArticles() {
     }
   };
 
-  return { articles, loading, error, fetchArticles, pagination, addArticle };
+  const updateArticle = async (id: string, data: NewArticlePayload) => {
+    try {
+      const updated = await updateArticleService(id, data);
+      console.log('updated', updated);
+      setArticles((prev) => prev.map((article) => (article.id === id ? updated : article)));
+      return updated;
+    } catch (error) {
+      setError((error as Error).message);
+      throw error;
+    }
+  };
+
+  const publishArticle = async (id: string) => {
+    setLoading(true);
+    setError(null);
+    try {
+      const published = await publishArticleService(id);
+      // console.log('updated', updated);
+      // setArticles((prev) => prev.map((article) => (article.id === id ? updated : article)));
+      return published;
+    } catch (error) {
+      setError((error as Error).message);
+      throw error;
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const unPublishArticle = async (id: string) => {
+    setLoading(true);
+    setError(null);
+    try {
+      const unpublished = await unPublishArticleService(id);
+      // console.log('updated', updated);
+      // setArticles((prev) => prev.map((article) => (article.id === id ? updated : article)));
+      return unpublished;
+    } catch (error) {
+      setError((error as Error).message);
+      throw error;
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return {
+    articles,
+    loading,
+    error,
+    fetchArticles,
+    pagination,
+    getArticleById,
+    addArticle,
+    updateArticle,
+    publishArticle,
+    unPublishArticle,
+  };
 }
