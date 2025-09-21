@@ -5,6 +5,7 @@ import { charityGallery, impactGallery, seminarGallery } from '@/utils/gallery';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useEffect } from 'react';
 
 export default function ActivityPage() {
@@ -35,9 +36,14 @@ export default function ActivityPage() {
               <button className='uppercase font-bold text-xs md:text-sm lg:text-base bg-[#DF334D] text-white px-6 py-1 rounded-md '>
                 ABOUT US
               </button>
-              <button className='uppercase font-bold text-xs md:text-sm lg:text-base bg-white text-black px-6 py-1 rounded-md '>
+              <Link
+                href={`https://heyjong.id/oprecMember`}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='uppercase font-bold text-xs md:text-sm lg:text-base bg-white text-black px-6 py-1 rounded-md '
+              >
                 JOIN US
-              </button>
+              </Link>
             </div>
           </div>
         </div>

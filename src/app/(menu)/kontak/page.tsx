@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 import { Fraunces, Source_Sans_3 } from 'next/font/google';
 import { EnvelopeIcon, MapPinIcon, PhoneIcon } from '@heroicons/react/24/outline';
 import React from 'react';
+import Link from 'next/link';
 
 const sourceSans = Source_Sans_3({
   weight: ['200', '300', '400', '500', '600', '700', '800', '900'],
@@ -44,9 +45,14 @@ export default function ContactPage() {
               <button className='uppercase font-bold text-xs md:text-sm lg:text-base bg-[#DF334D] text-white px-6 py-1 rounded-md '>
                 ABOUT US
               </button>
-              <button className='uppercase font-bold text-xs md:text-sm lg:text-base bg-white text-black px-6 py-1 rounded-md '>
+              <Link
+                href={`https://heyjong.id/oprecMember`}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='uppercase font-bold text-xs md:text-sm lg:text-base bg-white text-black px-6 py-1 rounded-md '
+              >
                 JOIN US
-              </button>
+              </Link>
             </div>
           </div>
         </div>
