@@ -118,3 +118,41 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Tambahkan ke globals.css */
+.mantine-RichTextEditor-content ul {
+  list-style-type: disc !important;
+  padding-left: 1.5rem !important;
+  margin: 1rem 0 !important;
+}
+
+.mantine-RichTextEditor-content ol {
+  list-style-type: decimal !important;
+  padding-left: 1.5rem !important;
+  margin: 1rem 0 !important;
+}
+
+.mantine-RichTextEditor-content li {
+  display: list-item !important;
+  margin-left: 0 !important;
+  margin-bottom: 0.25rem !important;
+}
+
+.mantine-RichTextEditor-content ul li {
+  list-style-type: disc !important;
+}
+
+.mantine-RichTextEditor-content ol li {
+  list-style-type: decimal !important;
+}
+
+/* Untuk nested lists */
+.mantine-RichTextEditor-content ul ul {
+  list-style-type: circle !important;
+  margin: 0.25rem 0 !important;
+}
+
+.mantine-RichTextEditor-content ol ol {
+  list-style-type: lower-alpha !important;
+  margin: 0.25rem 0 !important;
+}

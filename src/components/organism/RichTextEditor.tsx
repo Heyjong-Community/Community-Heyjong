@@ -11,7 +11,7 @@ import SubScript from '@tiptap/extension-subscript';
 import { MantineProvider } from '@mantine/core';
 import '@mantine/core/styles.css';
 import '@mantine/tiptap/styles.css';
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 
 type Props = {
   value: string;
@@ -19,8 +19,6 @@ type Props = {
 };
 
 export default function RichTextEditorForm({ value, onChange }: Props) {
-  const debounceRef = useRef<number | null>(null);
-
   const editor = useEditor({
     extensions: [
       StarterKit,
@@ -34,39 +32,15 @@ export default function RichTextEditorForm({ value, onChange }: Props) {
     content: value || '',
     immediatelyRender: false,
     onUpdate: ({ editor }) => {
-      // onChange(editor.getHTML()); // sync ke parent
-      const html = editor.getHTML();
-      if (debounceRef.current) window.clearTimeout(debounceRef.current);
-      debounceRef.current = window.setTimeout(() => {
-        onChange(html);
-      }, 150);
+      onChange(editor.getHTML());
     },
   });
 
   useEffect(() => {
-    if (!editor) return;
-
-    // if value is null/undefined/empty string, we still might want to set empty content
-    const current = editor.getHTML();
-
-    // only set if different — prevents overwriting while typing
-    if (value !== current) {
-      // second arg `false` prevents emitting an onUpdate (so we avoid loops)
+    if (editor && value !== editor.getHTML()) {
       editor.commands.setContent(value || '', { emitUpdate: false });
     }
   }, [editor, value]);
-
-  useEffect(() => {
-    return () => {
-      // cleanup debounce on unmount
-      if (debounceRef.current) window.clearTimeout(debounceRef.current);
-    };
-  }, []);
-  // useEffect(() => {
-  //   if (editor && value) {
-  //     editor.commands.setContent(value);
-  //   }
-  // }, [editor, value]);
 
   return (
     <MantineProvider>
@@ -118,6 +92,44 @@ export default function RichTextEditorForm({ value, onChange }: Props) {
 
         <RichTextEditor.Content />
       </RichTextEditor>
+
+      <style jsx global>{`
+        .mantine-RichTextEditor-content ul {
+          list-style-type: disc !important;
+          padding-left: 1.5rem !important;
+          margin: 1rem 0 !important;
+        }
+
+        .mantine-RichTextEditor-content ol {
+          list-style-type: decimal !important;
+          padding-left: 1.5rem !important;
+          margin: 1rem 0 !important;
+        }
+
+        .mantine-RichTextEditor-content li {
+          display: list-item !important;
+          margin-left: 0 !important;
+          margin-bottom: 0.25rem !important;
+        }
+
+        .mantine-RichTextEditor-content ul li {
+          list-style-type: disc !important;
+        }
+
+        .mantine-RichTextEditor-content ol li {
+          list-style-type: decimal !important;
+        }
+
+        .mantine-RichTextEditor-content ul ul {
+          list-style-type: circle !important;
+          margin: 0.25rem 0 !important;
+        }
+
+        .mantine-RichTextEditor-content ol ol {
+          list-style-type: lower-alpha !important;
+          margin: 0.25rem 0 !important;
+        }
+      `}</style>
     </MantineProvider>
   );
 }
