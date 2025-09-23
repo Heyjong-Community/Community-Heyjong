@@ -142,8 +142,8 @@ export default function Home() {
           </div>
           <div className='flex items-center justify-center rounded-2xl bg-[#FF0033]'>
             <div className='py-8'>
-              <Image src={`/icons/ic-youtube.svg`} width={400} height={400} alt='discord' className='size-20 mx-auto' />
-              <Link href={`#`} target='_blank' rel='noopener noreferrer'>
+              <Image src={`/icons/ic-youtube.svg`} width={400} height={400} alt='youtube' className='size-20 mx-auto' />
+              <Link href={`https://www.youtube.com/@HJCPro`} target='_blank' rel='noopener noreferrer'>
                 <button className='mt-8 uppercase cursor-pointer font-bold text-xs md:text-sm lg:text-lg bg-white px-6 py-1 rounded-md '>
                   <span className='bg-[#FF0033] bg-clip-text text-transparent'>Selengkapnya</span>
                 </button>
