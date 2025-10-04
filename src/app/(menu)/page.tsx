@@ -44,35 +44,37 @@ export default function Home() {
         </div>
       </section>
       <section className='container px-5 py-24 mx-auto'>
-        <p className={`uppercase text-primary text-base text-center font-bold ${fraunces.className}`}>
+        <p className={`uppercase text-primary text-base lg:text-3xl text-center font-bold ${fraunces.className}`}>
           What&apos;s New
         </p>
-        <div className='mt-8 grid grid-cols-1 md:grid-cols-2 gap-12'>
-          <div className=''>
-            <div className='text-center'>
-              <h2 className='text-black text-3xl md:text-4xl lg:text-6xl font-bold'>
-                Workshop: Fundamental Content Creation
+        <div className='mt-8'>
+          <div className='grid grid-cols-1 md:grid-cols-2 gap-12 items-stretch'>
+            <div className='flex flex-col h-full'>
+              <h2 className='text-black text-3xl md:text-4xl lg:text-3xl text-center font-bold'>
+                Coming Soon Short Movie
               </h2>
+              <div className='mt-8 flex-1'>
+                <Image
+                  src={`/images/whats-new/PergiTanpaPesan.webp`}
+                  width={750}
+                  height={750}
+                  alt='film'
+                  className='mx-auto h-full w-auto object-contain rounded-2xl'
+                />
+              </div>
             </div>
-            <div className='mt-8'>
-              <Image
-                src={`/images/new-workshop.webp`}
-                width={750}
-                height={1000}
-                alt='workshop'
-                className='mx-auto h-1/2 w-auto'
-              />
-            </div>
-          </div>
-          <div className=''>
-            <div className='text-center'>
-              <h2 className='text-black text-3xl md:text-4xl lg:text-6xl font-bold'>RAGU By Heyjong Community</h2>
-            </div>
-            <div className='mt-10'>
-              <video width='100%' height='auto' controls muted playsInline preload='metadata' className='rounded-xl'>
-                <source src='https://nineteeninnovation.my.id/hjc/videos/compro.mp4' type='video/mp4' />
-                Your browser does not support the video tag.
-              </video>
+            <div className='flex flex-col h-full'>
+              <h2 className='text-black text-3xl md:text-4xl lg:text-3xl text-center font-bold'>
+                JongOut: Ignite To Movement
+              </h2>
+              <div className='mt-8 aspect-[9/16] w-full max-w-sm mx-auto'>
+                <iframe
+                  src='https://www.instagram.com/reel/DO0Xih9j2wB/embed'
+                  className='w-full h-full rounded-2xl'
+                  frameBorder='0'
+                  scrolling='no'
+                ></iframe>
+              </div>
             </div>
           </div>
         </div>
