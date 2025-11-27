@@ -128,9 +128,7 @@ export default function Home() {
               </div>
             </div>
             <div className='flex flex-col h-full'>
-              <h2 className='text-black text-3xl md:text-4xl lg:text-3xl text-center font-bold'>
-                JongOut: Ignite To Movement
-              </h2>
+              <h2 className='text-black text-3xl md:text-4xl lg:text-3xl text-center font-bold'>Circle Positif</h2>
               <div className='mt-8 aspect-[9/16] w-full max-w-sm mx-auto'>
                 <iframe
                   src='https://www.instagram.com/reel/DQWPiGwD7Xn/embed'
