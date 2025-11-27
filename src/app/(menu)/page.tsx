@@ -6,9 +6,18 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function Home() {
+  const [hovered, setHovered] = useState<number | null>(null);
+
+  const images = [
+    '/images/seminar/seminar_2363.webp',
+    '/images/seminar/seminar_3015.webp',
+    '/images/impact/12.webp',
+    '/images/impact/08.webp',
+  ];
+
   useEffect(() => {
     AOS.init({
       delay: 100,
@@ -35,11 +44,66 @@ export default function Home() {
             </p>
             <div className='mt-4 flex items-stretch gap-2.5'>
               <Link href={`/tentang-kami`}>
-                <button className='uppercase cursor-pointer font-bold text-xs md:text-sm lg:text-base bg-[#DF334D] text-white px-6 py-1 rounded-md '>
+                <button className='uppercase cursor-pointer font-bold text-xs md:text-sm lg:text-base bg-[#DF334D] text-white px-6 py-1 rounded-md'>
                   Tentang Kami
                 </button>
               </Link>
+              <Link href={`https://heyjong.id/oprecMember`}>
+                <button className='uppercase cursor-pointer font-bold text-xs md:text-sm lg:text-base bg-white text-black px-6 py-1 rounded-md'>
+                  Gass Join
+                </button>
+              </Link>
             </div>
+          </div>
+        </div>
+      </section>
+      <section className='container px-5 py-24 mx-auto'>
+        <div className='text-center'>
+          <p className={`uppercase text-primary text-base font-bold ${fraunces.className}`}>Sekilas Tentang</p>
+          <h2 className='text-black text-3xl md:text-4xl lg:text-6xl font-bold'>Heyjong Community</h2>
+        </div>
+        <div className='mt-10 grid grid-cols-1 md:grid-cols-2 gap-8 xl:gap-60'>
+          <div className='justify-self-start place-self-center'>
+            <h4 className='text-2xl md:text-3xl font-bold'>Tak Kenal? Maka Kita Kenalin</h4>
+            <p className='mt-5 text-justify text-lg lg:text-xl'>
+              Halo Gais! 👋 Kenalin nih <span className='font-semibold'>Heyjong Community</span>, tempat di mana potensi
+              kamu bisa tumbuh maksimal dan daya ciptamu diasah! Kami hadir sebagai wadah yang super positif, dibangun
+              atas semangat{' '}
+              <span className='font-semibold'>&quot;Let&apos;s Grow Together And Spread Good Vibes&quot;</span>. Di
+              sini, kita bukan cuma kumpul biasa, tapi berkomitmen untuk jadi generasi muda penebar kebaikan.
+              Berpegangan pada nilai-nilai Islam (Fathanah, Amanah, Shidiq, Tabligh), kami siap membersamai kamu untuk
+              tumbuh bareng, berlatih pola pikir solutif, dan terjun langsung dalam aksi nyata yang keren! Yuk, gabung
+              dan buktikan bahwa karyamu—baik di dunia digital maupun kegiatan sosial—bisa bawa perubahan nyata bagi
+              masyarakat!
+            </p>
+            <div className='mt-5'>
+              <Link href={`https://heyjong.id/oprecMember`}>
+                <button className='uppercase cursor-pointer font-bold text-xs md:text-sm lg:text-base bg-[#DF334D] text-white px-6 py-1 rounded-md'>
+                  Gass Join!
+                </button>
+              </Link>
+            </div>
+          </div>
+          <div className='grid grid-cols-2 gap-4'>
+            {images.map((img, index) => (
+              <div
+                key={index}
+                onMouseEnter={() => setHovered(index)}
+                onMouseLeave={() => setHovered(null)}
+                className={`
+              rounded-xl overflow-hidden transition-all duration-300
+              ${hovered === index ? 'scale-110 z-10' : hovered !== null ? 'scale-90 opacity-70' : 'scale-100'}
+            `}
+              >
+                <Image
+                  src={img}
+                  alt={`Gallery ${index}`}
+                  width={500}
+                  height={500}
+                  className='object-cover w-full h-full'
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -69,7 +133,7 @@ export default function Home() {
               </h2>
               <div className='mt-8 aspect-[9/16] w-full max-w-sm mx-auto'>
                 <iframe
-                  src='https://www.instagram.com/reel/DO0Xih9j2wB/embed'
+                  src='https://www.instagram.com/reel/DQWPiGwD7Xn/embed'
                   className='w-full h-full rounded-2xl'
                   frameBorder='0'
                   scrolling='no'
