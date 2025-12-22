@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import {
   DropdownMenu,
@@ -9,8 +11,20 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { Button } from '../ui/button';
 import { Menu } from 'lucide-react';
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '../ui/dialog';
+import { useLogoutUser } from '@/hooks/user/useUserLogout';
 
 export default function NavDash() {
+  const { handleLogout } = useLogoutUser();
   return (
     <nav className='shadow flex items-center justify-between px-4 py-2'>
       <div className=''>
@@ -19,21 +33,49 @@ export default function NavDash() {
         </Button>
       </div>
       <div className=''>
-        <DropdownMenu>
-          <DropdownMenuTrigger className='cursor-pointer'>Jong - Mahdy</DropdownMenuTrigger>
-          <DropdownMenuContent>
-            <DropdownMenuLabel>My Account</DropdownMenuLabel>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem>Profile</DropdownMenuItem>
-            <DropdownMenuItem>Billing</DropdownMenuItem>
-            <DropdownMenuItem>Team</DropdownMenuItem>
-            <DropdownMenuItem>
-              <Button variant='default' size='sm'>
+        <Dialog>
+          <DropdownMenu>
+            <DropdownMenuTrigger className='cursor-pointer'>Jong - Mahdy</DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <DropdownMenuLabel>My Account</DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem>Profile</DropdownMenuItem>
+              <DropdownMenuItem>Billing</DropdownMenuItem>
+              <DropdownMenuItem>Team</DropdownMenuItem>
+              <DropdownMenuItem>
+                <DialogTrigger asChild>
+                  <Button variant='default' size='sm'>
+                    Logout
+                  </Button>
+                </DialogTrigger>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+          <DialogContent className='sm:max-w-md'>
+            <DialogHeader>
+              <DialogTitle className='text-black'>Konfirmasi Logout</DialogTitle>
+              <DialogDescription className='text-text-light'>Apakah kamu yakin ingin keluar?</DialogDescription>
+            </DialogHeader>
+
+            <DialogFooter className='flex justify-end gap-2'>
+              <DialogClose asChild>
+                <button
+                  type='button'
+                  className='rounded-md border border-gray-600 px-3 py-2 text-sm text-gray-300 hover:bg-gray-800'
+                >
+                  Batal
+                </button>
+              </DialogClose>
+              <button
+                type='button'
+                onClick={handleLogout}
+                className='bg-primary hover:bg-primary/80 rounded-md px-3 py-2 text-sm font-semibold text-white'
+              >
                 Logout
-              </Button>
-            </DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
+              </button>
+            </DialogFooter>
+          </DialogContent>
+        </Dialog>
         {/* <Button asChild variant={'outline'} className='py-2'>
                 <p>Jong Mahdy</p>
               </Button> */}
