@@ -4,6 +4,9 @@ import '../globals.css';
 import Sidebar from '@/components/organism/Sidebar';
 import NavDash from '@/components/organism/NavDash';
 import { Toaster } from 'sonner';
+import { MantineProvider } from '@mantine/core';
+import '@mantine/core/styles.css';
+import '@mantine/tiptap/styles.css';
 
 const barlowCondensed = Barlow_Condensed({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
@@ -41,13 +44,14 @@ export default function DashboardLayout({
       </body> */}
       <body className={`${barlowCondensed.className} antialiased flex flex-row items-start flex-nowrap`}>
         {/* <MantineProvider defaultColorScheme='light'> */}
-        <Sidebar />
-        <main className='grow overflow-y-auto h-screen'>
-          <NavDash />
-          {children}
-        </main>
-        <Toaster richColors position='bottom-right' />
-        {/* </MantineProvider> */}
+        <MantineProvider>
+          <Sidebar />
+          <main className='grow overflow-y-auto h-screen'>
+            <NavDash />
+            {children}
+          </main>
+          <Toaster richColors position='bottom-right' />
+        </MantineProvider>
       </body>
     </html>
   );

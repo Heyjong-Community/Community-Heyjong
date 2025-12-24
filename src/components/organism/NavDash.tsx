@@ -26,7 +26,7 @@ import { useLogoutUser } from '@/hooks/user/useUserLogout';
 export default function NavDash() {
   const { handleLogout } = useLogoutUser();
   return (
-    <nav className='shadow flex items-center justify-between px-4 py-2'>
+    <nav className='shadow flex items-center justify-between px-4 py-2 bg-white border-b border-gray-200'>
       <div className=''>
         <Button variant={'ghost'} size={'sm'}>
           <Menu className='h-4 w-4' />

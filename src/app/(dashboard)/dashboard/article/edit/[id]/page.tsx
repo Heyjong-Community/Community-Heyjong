@@ -1,6 +1,6 @@
 'use client';
 
-import RichTextEditorForm from '@/components/organism/RichTextEditor';
+// import RichTextEditorForm from '@/components/organism/RichTextEditor';
 import { Button } from '@/components/ui/button';
 import { useArticles } from '@/hooks/article/useArticles';
 import { useCategories } from '@/hooks/category/useCategories';
@@ -9,6 +9,9 @@ import Image from 'next/image';
 import { useParams, useRouter } from 'next/navigation';
 import React, { ChangeEvent, useEffect, useState } from 'react';
 import { toast } from 'sonner';
+import dynamic from 'next/dynamic';
+
+const RichTextEditorForm = dynamic(() => import('@/components/organism/RichTextEditor'), { ssr: false });
 
 export default function EditArticlePage() {
   const router = useRouter();

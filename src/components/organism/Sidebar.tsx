@@ -8,7 +8,8 @@ import SidebarItem from '../molecules/SidebarItem';
 export default function Sidebar() {
   return (
     // <aside className='hidden w-64 overflow-y-auto bg-[#F5FFF5] lg:block'>
-    <aside className='hidden w-64 grow-0 h-screen shadow bg-secondary/10 lg:block'>
+    // <aside className='hidden w-64 grow-0 h-screen shadow bg-secondary/10 lg:block'>
+    <aside className='hidden w-64 grow-0 h-screen shadow bg-white lg:block border-r border-gray-200'>
       <div className='flex items-center'>
         <Image src={`/images/logo-color.png`} width={100} height={100} alt='logo' className='size-20' />
         <div className=''>
