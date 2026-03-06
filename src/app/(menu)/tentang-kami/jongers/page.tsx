@@ -1,7 +1,15 @@
 'use client';
 
 import Jongers from '@/components/molecules/Jongers';
-import { bendahara, managerKomunitas, member, orderedComdev, orderedCreative, sekretaris } from '@/utils/data';
+import {
+  assitenManagerKomunitas,
+  bendahara,
+  managerKomunitas,
+  orderedEventOrganizer,
+  orderedHRD,
+  orderedSocmedOfficer,
+  sekretaris,
+} from '@/utils/data';
 import React from 'react';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -33,12 +41,12 @@ export default function JongersPage() {
               position={managerKomunitas.position}
             />
           )}
-          {bendahara && (
+          {assitenManagerKomunitas && (
             <Jongers
-              photo={bendahara.photo}
-              name={bendahara.nickname}
-              gender={bendahara.gender}
-              position={bendahara.position}
+              photo={assitenManagerKomunitas.photo}
+              name={assitenManagerKomunitas.nickname}
+              gender={assitenManagerKomunitas.gender}
+              position={assitenManagerKomunitas.position}
             />
           )}
           {sekretaris.map((jong) => (
@@ -50,15 +58,7 @@ export default function JongersPage() {
               position={jong.position}
             />
           ))}
-        </div>
-      </div>
-      <div id='creative' className='container px-5 mx-auto mb-20'>
-        <div className=''>
-          <h1 className='uppercase text-3xl font-bold text-black'>Divisi Public Relation</h1>
-          <hr className='my-4 border-4 border-primary w-10' />
-        </div>
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
-          {orderedCreative.map((jong) => (
+          {bendahara.map((jong) => (
             <Jongers
               key={jong.id}
               photo={jong.photo}
@@ -69,13 +69,13 @@ export default function JongersPage() {
           ))}
         </div>
       </div>
-      <div id='comdev' className='container px-5 mx-auto mb-20'>
+      <div id='eventOrganizer' className='container px-5 mx-auto mb-20'>
         <div className=''>
-          <h1 className='uppercase text-3xl font-bold text-black'>Divisi Comdev</h1>
+          <h1 className='uppercase text-3xl font-bold text-black'>Divisi Event Organizer</h1>
           <hr className='my-4 border-4 border-primary w-10' />
         </div>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
-          {orderedComdev.map((jong) => (
+          {orderedEventOrganizer.map((jong) => (
             <Jongers
               key={jong.id}
               photo={jong.photo}
@@ -86,7 +86,41 @@ export default function JongersPage() {
           ))}
         </div>
       </div>
-      <div id='member' className='container px-5 mx-auto mb-20'>
+      <div id='socmed' className='container px-5 mx-auto mb-20'>
+        <div className=''>
+          <h1 className='uppercase text-3xl font-bold text-black'>Divisi Socmed Officer</h1>
+          <hr className='my-4 border-4 border-primary w-10' />
+        </div>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
+          {orderedSocmedOfficer.map((jong) => (
+            <Jongers
+              key={jong.id}
+              photo={jong.photo}
+              name={jong.nickname}
+              gender={jong.gender}
+              position={jong.position}
+            />
+          ))}
+        </div>
+      </div>
+      <div id='hrd' className='container px-5 mx-auto mb-20'>
+        <div className=''>
+          <h1 className='uppercase text-3xl font-bold text-black'>Divisi Human Resource Development</h1>
+          <hr className='my-4 border-4 border-primary w-10' />
+        </div>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
+          {orderedHRD.map((jong) => (
+            <Jongers
+              key={jong.id}
+              photo={jong.photo}
+              name={jong.nickname}
+              gender={jong.gender}
+              position={jong.position}
+            />
+          ))}
+        </div>
+      </div>
+      {/* <div id='member' className='container px-5 mx-auto mb-20'>
         <div className=''>
           <h1 className='uppercase text-3xl font-bold text-black'>Jongers</h1>
           <hr className='my-4 border-4 border-primary w-10' />
@@ -102,7 +136,7 @@ export default function JongersPage() {
             />
           ))}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
