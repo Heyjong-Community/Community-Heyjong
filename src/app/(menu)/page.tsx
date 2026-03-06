@@ -114,27 +114,22 @@ export default function Home() {
         <div className='mt-8'>
           <div className='grid grid-cols-1 md:grid-cols-2 gap-12 items-stretch'>
             <div className='flex flex-col h-full'>
-              <h2 className='text-black text-3xl md:text-4xl lg:text-3xl text-center font-bold'>
-                Coming Soon Short Movie
-              </h2>
-              <div className='mt-8 flex-1'>
-                <Image
-                  src={`/images/whats-new/PergiTanpaPesan.webp`}
-                  width={750}
-                  height={750}
-                  alt='film'
-                  className='mx-auto h-full w-auto object-contain rounded-2xl'
-                />
+              <div className='w-full h-60 md:h-auto md:aspect-video'>
+                <iframe
+                  src='https://www.youtube.com/embed/08ObWOwAujE'
+                  title='SHORT MOVIE PERGI TANPA PESAN by Heyjong Community'
+                  className='w-full h-full'
+                  allowFullScreen
+                ></iframe>
               </div>
             </div>
             <div className='flex flex-col h-full'>
-              <h2 className='text-black text-3xl md:text-4xl lg:text-3xl text-center font-bold'>Circle Positif</h2>
-              <div className='mt-8 aspect-[9/16] w-full max-w-sm mx-auto'>
+              <div className='w-full h-60 md:h-auto md:aspect-video'>
                 <iframe
-                  src='https://www.instagram.com/reel/DQWPiGwD7Xn/embed'
-                  className='w-full h-full rounded-2xl'
-                  frameBorder='0'
-                  scrolling='no'
+                  src='https://www.youtube.com/embed/NsLgfPQLtkI'
+                  title='"KITA KURANG REACH OUT" EDISI JONG IMPACT GOES TO LEUWEUNG KOLOT'
+                  className='w-full h-full'
+                  allowFullScreen
                 ></iframe>
               </div>
             </div>
