@@ -6,7 +6,7 @@ import { Article } from '@/types/article';
 import { ColumnDef } from '@tanstack/react-table';
 import { Pencil } from 'lucide-react';
 import Link from 'next/link';
-import RemoveCategoryButton from './remove-button';
+import RemoveArticleButton from './remove-button';
 
 export const columns: ColumnDef<Article>[] = [
   {
@@ -42,7 +42,7 @@ export const columns: ColumnDef<Article>[] = [
               Edit
             </Link>
           </Button>
-          <RemoveCategoryButton id={article.id} name={article.title} />
+          <RemoveArticleButton id={article.id} name={article.title} />
           {/* <Button size='sm' type='submit' variant='destructive'>
             <Trash className='h-4 w-4' />
             Hapus

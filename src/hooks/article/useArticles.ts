@@ -1,5 +1,6 @@
 import {
   addNewArticle,
+  deleteArticle,
   GetAllArticles,
   GetArticleById,
   publishArticleService,
@@ -102,6 +103,17 @@ export function useArticles() {
     }
   };
 
+  const removeArticle = async (id: string) => {
+    setLoading(true);
+    setError(null);
+    try {
+      await deleteArticle(id);
+      setArticles((prev) => prev.filter((artcl) => artcl.id !== id));
+    } catch (error) {
+      setError((error as Error).message);
+    }
+  };
+
   return {
     articles,
     loading,
@@ -113,5 +125,6 @@ export function useArticles() {
     updateArticle,
     publishArticle,
     unPublishArticle,
+    removeArticle,
   };
 }

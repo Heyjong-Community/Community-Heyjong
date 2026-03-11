@@ -48,7 +48,11 @@ export default function EditArticlePage() {
         });
 
         if (article.thumbnail) {
-          setThumbnailPreview(`${baseUrl}${article.thumbnail}`);
+          const imageUrl =
+            article.thumbnail.startsWith('http://') || article.thumbnail.startsWith('https://')
+              ? article.thumbnail
+              : `${baseUrl}${article.thumbnail}`;
+          setThumbnailPreview(imageUrl);
         }
 
         setIsPublished(article.published);

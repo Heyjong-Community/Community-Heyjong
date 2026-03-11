@@ -1,4 +1,3 @@
-import { useCategories } from '@/hooks/category/useCategories';
 import React, { useState } from 'react';
 import { toast } from 'sonner';
 import {
@@ -13,24 +12,25 @@ import {
   AlertDialogTrigger,
 } from '@/components/ui/alert-dialog';
 import { Button } from '@/components/ui/button';
+import { useArticles } from '@/hooks/article/useArticles';
 
 type Props = {
   id: string;
   name: string;
 };
 
-export default function RemoveCategoryButton({ id, name }: Props) {
-  const { removeCategory } = useCategories();
+export default function RemoveArticleButton({ id, name }: Props) {
+  const { removeArticle } = useArticles();
   const [open, setOpen] = useState<boolean>(false);
   const [submitting, setSubmitting] = useState<boolean>(false);
 
   const handleRemove = async () => {
     try {
       setSubmitting(true);
-      await removeCategory(id);
+      await removeArticle(id);
 
       setOpen(false);
-      toast.success('Kategori dihapus');
+      toast.success('Artikel dihapus');
     } catch (error) {
       toast.success(`${(error as Error).message}`);
     } finally {
@@ -48,7 +48,7 @@ export default function RemoveCategoryButton({ id, name }: Props) {
 
       <AlertDialogContent>
         <AlertDialogHeader>
-          <AlertDialogTitle>Hapus kategori?</AlertDialogTitle>
+          <AlertDialogTitle>Hapus Artikel?</AlertDialogTitle>
           <AlertDialogDescription>
             Tindakan ini tidak bisa dibatalkan. Data kategori<strong> {name}</strong> akan dihapus permanen.
           </AlertDialogDescription>
