@@ -1,6 +1,5 @@
 'use client';
 
-// import RichTextEditorForm from '@/components/organism/RichTextEditor';
 import { Button } from '@/components/ui/button';
 import { useArticles } from '@/hooks/article/useArticles';
 import { useCategories } from '@/hooks/category/useCategories';
@@ -10,8 +9,9 @@ import { useRouter } from 'next/navigation';
 import React, { ChangeEvent, useEffect, useState } from 'react';
 import { toast } from 'sonner';
 import dynamic from 'next/dynamic';
+import 'react-quill-new/dist/quill.snow.css';
 
-const RichTextEditorForm = dynamic(() => import('@/components/organism/RichTextEditor'), { ssr: false });
+const QuillEditorForm = dynamic(() => import('@/components/organism/QuillEditor'), { ssr: false });
 
 export default function AddArticlePage() {
   const router = useRouter();
@@ -239,7 +239,7 @@ export default function AddArticlePage() {
             className='w-40 h-40 object-cover mt-2'
           />
         )}
-        <RichTextEditorForm value={formData.content} onChange={handleEditorChange} />
+        <QuillEditorForm value={formData.content} onChange={handleEditorChange} />
         <div className=''>
           <Button type='submit' variant='default'>
             Simpan
