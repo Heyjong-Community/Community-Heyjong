@@ -55,15 +55,14 @@ export async function addNewArticle(payload: NewArticlePayload) {
     formData.append('slug', payload.slug);
     formData.append('content', payload.content);
     formData.append('category_id', payload.category_id);
-    if (payload.thumbnail) {
-      formData.append('thumbnail', payload.thumbnail); // nama harus sama dengan multer.single('thumbnail')
+
+    if (payload.thumbnail instanceof File) {
+      formData.append('thumbnail', payload.thumbnail);
     }
 
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_BACKEND}/article/add`, {
       method: 'POST',
-      // headers: { 'Content-Type': 'application/json' },
       credentials: 'include',
-      // body: JSON.stringify(payload),
       body: formData,
     });
 
@@ -73,7 +72,6 @@ export async function addNewArticle(payload: NewArticlePayload) {
     const data = await res.json();
 
     if (!res.ok) {
-      // const errorData = await res.json();
       throw new Error(data.message || 'Failed to add data');
     }
 
