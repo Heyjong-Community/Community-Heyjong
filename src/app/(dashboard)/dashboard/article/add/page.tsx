@@ -99,7 +99,6 @@ export default function AddArticlePage() {
       }
     };
     reader.onerror = () => {
-      console.error('Error reading file');
       toast.error('Gagal membaca file');
     };
     reader.readAsDataURL(file);
@@ -107,32 +106,19 @@ export default function AddArticlePage() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
     if (!formData.title || !formData.slug || !formData.category_id || !formData.content) {
-      alert('Judul, slug, kategori, dan konten wajib diisi.');
+      toast.error('Judul, slug, kategori, dan konten wajib diisi.');
       return;
     }
 
     try {
-      console.log('Data yang akan dikirim:', {
-        title: formData.title,
-        slug: formData.slug,
-        category_id: formData.category_id,
-        content: formData.content,
-        thumbnail: formData.thumbnail
-          ? {
-              name: formData.thumbnail.name,
-              size: formData.thumbnail.size,
-              type: formData.thumbnail.type,
-            }
-          : null,
-      });
-
       const payload: NewArticlePayload = {
         title: formData.title,
         slug: formData.slug,
         content: formData.content,
         category_id: formData.category_id,
-        thumbnail: formData.thumbnail,
+        thumbnail: formData.thumbnail ?? undefined,
       };
 
       await addArticle(payload);
@@ -153,9 +139,8 @@ export default function AddArticlePage() {
 
       setTimeout(() => {
         router.push('/dashboard/article');
-      }, 2000);
+      }, 1000);
     } catch (error) {
-      console.error('kenapa error = ', error);
       toast.error(`Gagal: ${(error as Error).message}`);
     }
   };
