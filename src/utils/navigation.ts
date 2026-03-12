@@ -8,5 +8,6 @@ export const daftarMenu: MenuItem[] = [
   { nama: 'Beranda', link: '/' },
   { nama: 'Tentang Kami', link: '/tentang-kami' },
   { nama: 'Kegiatan', link: '/kegiatan' },
+  { nama: 'Artikel', link: '/artikel' },
   { nama: 'Kontak', link: '/kontak' },
 ];

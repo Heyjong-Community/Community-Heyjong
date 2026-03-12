@@ -22,6 +22,7 @@ export interface Article {
   id: string;
   title: string;
   slug: string;
+  content: string;
   author_id: string;
   category_id: string;
   thumbnail?: File;

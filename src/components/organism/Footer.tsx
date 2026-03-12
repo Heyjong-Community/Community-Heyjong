@@ -1,4 +1,6 @@
+import { daftarMenu } from '@/utils/navigation';
 import { Fraunces } from 'next/font/google';
+import Link from 'next/link';
 import React from 'react';
 import { SocialIcon } from 'react-social-icons';
 
@@ -16,29 +18,38 @@ export default function Footer() {
           <div className=''>
             <p className='font-extrabold text-white text-xl uppercase'>Contact</p>
             <div className={`mt-3 ${fraunces.className}`}>
-              <p className='text-white text-base font-semibold tracking-tight'>
+              <p className='text-white text-base tracking-tight'>
                 Jl. H. Taiman Barat 1 No.4, RT.2/RW.2, Ps. Rebo, Kota Jakarta Timur, DKI Jakarta
               </p>
-              <p className='text-white text-base font-semibold tracking-tight'>0895-3283-10378 (Kak Dieni)</p>
-              <p className='text-white text-base font-semibold tracking-tight'>heyjongcommunity@gmail.com</p>
+              <p className='text-white text-base tracking-tight'>0895-3283-10378 (Kak Dieni)</p>
+              <p className='text-white text-base tracking-tight'>heyjongcommunity@gmail.com</p>
             </div>
           </div>
           <div className=''>
             <p className='font-extrabold text-white text-xl uppercase'>Community</p>
             <div className={`mt-3 ${fraunces.className}`}>
-              <p className='text-white text-base font-semibold tracking-tight'>Tentang Kami</p>
-              <p className='text-white text-base font-semibold tracking-tight'>Kegiatan</p>
-              <p className='text-white text-base font-semibold tracking-tight'>Kontak</p>
+              {daftarMenu.map((menu, i) => (
+                <Link href={menu.link} key={i}>
+                  <p className='text-white text-base tracking-tight hover:text-primary transition-all duration-200'>
+                    {menu.nama}
+                  </p>
+                </Link>
+              ))}
+              <Link href={`/login`}>
+                <p className='text-white text-base tracking-tight hover:text-primary transition-all duration-200'>
+                  Dashboard Jongers
+                </p>
+              </Link>
             </div>
           </div>
           <div className=''>
             <p className='font-extrabold text-white text-xl uppercase'>Kegiatan</p>
             <div className={`mt-3 ${fraunces.className}`}>
-              <p className='text-white text-base font-semibold tracking-tight'>Seminar</p>
-              <p className='text-white text-base font-semibold tracking-tight'>Impact</p>
-              <p className='text-white text-base font-semibold tracking-tight'>Charity</p>
-              <p className='text-white text-base font-semibold tracking-tight'>Ngonten</p>
-              <p className='text-white text-base font-semibold tracking-tight'>Kajian & Talkshow</p>
+              <p className='text-white text-base tracking-tight'>Seminar</p>
+              <p className='text-white text-base tracking-tight'>Impact</p>
+              <p className='text-white text-base tracking-tight'>Charity</p>
+              <p className='text-white text-base tracking-tight'>Ngonten</p>
+              <p className='text-white text-base tracking-tight'>Kajian & Talkshow</p>
             </div>
           </div>
           <div className=''>
@@ -57,7 +68,7 @@ export default function Footer() {
                 rel='noopener noreferrer'
               />
               <SocialIcon
-                url='https://www.youtube.com/heyjong_community'
+                url='https://www.youtube.com/@HJCPro'
                 style={{ height: 40, width: 40 }}
                 target='_blank'
                 rel='noopener noreferrer'
