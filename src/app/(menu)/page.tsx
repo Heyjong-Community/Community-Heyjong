@@ -1,6 +1,5 @@
 'use client';
 
-import { listContentHJ } from '@/utils/content';
 import { fraunces } from '@/utils/fonts';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -144,21 +143,20 @@ export default function Home() {
           <h2 className='text-black text-3xl md:text-4xl lg:text-6xl font-bold'>Yuk Kepoin Keseruannya!</h2>
         </div>
         <div className='mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4'>
-          {listContentHJ.map((content) => (
-            <div key={content.id} className=''>
-              <video
-                width='100%'
-                height='auto'
-                autoPlay
-                muted
-                playsInline
-                loop
-                preload='metadata'
-                className='rounded-3xl'
-              >
-                <source src={`${content.url}`} type='video/mp4' />
-                Your browser does not support the video tag.
-              </video>
+          {[
+            'https://www.instagram.com/reel/DMfcWkDPOba/embed',
+            'https://www.instagram.com/reel/DVBDTuwkUFd/embed',
+            'https://www.instagram.com/reel/DHrv56oTeGd/embed',
+            'https://www.instagram.com/reel/DKgh7oVPpP2/embed',
+          ].map((src, i) => (
+            <div key={i} className='relative w-full overflow-hidden rounded-2xl aspect-4/5'>
+              <iframe
+                src={src}
+                className='absolute top-0 left-0 w-full h-full'
+                frameBorder='0'
+                scrolling='no'
+                allow='autoplay; clipboard-write; encrypted-media; picture-in-picture'
+              />
             </div>
           ))}
         </div>
@@ -171,7 +169,7 @@ export default function Home() {
           </h2>
         </div>
         <div className='mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4'>
-          <div className='flex items-center justify-center rounded-2xl bg-gradient-to-br from-yellow-400 via-pink-500 to-purple-600'>
+          <div className='flex items-center justify-center rounded-2xl bg-linear-to-br from-yellow-400 via-pink-500 to-purple-600'>
             <div className='py-8'>
               <Image
                 src={`/icons/ic-instagram.svg`}
@@ -182,7 +180,7 @@ export default function Home() {
               />
               <Link href={`https://www.instagram.com/heyjong_community`} target='_blank' rel='noopener noreferrer'>
                 <button className='mt-8 uppercase cursor-pointer font-bold text-xs md:text-sm lg:text-lg bg-white px-6 py-1 rounded-md '>
-                  <span className='bg-gradient-to-br from-yellow-400 via-pink-500 to-purple-600 bg-clip-text text-transparent'>
+                  <span className='bg-linear-to-br from-yellow-400 via-pink-500 to-purple-600 bg-clip-text text-transparent'>
                     Selengkapnya
                   </span>
                 </button>
