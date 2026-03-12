@@ -4,7 +4,6 @@ import '../globals.css';
 import Sidebar from '@/components/organism/Sidebar';
 import NavDash from '@/components/organism/NavDash';
 import { Toaster } from 'sonner';
-import { MantineProvider } from '@mantine/core';
 import '@mantine/core/styles.css';
 import '@mantine/tiptap/styles.css';
 
@@ -38,20 +37,13 @@ export default function DashboardLayout({
       <head>
         <link rel='icon' type='image/png' href='/images/logo-color.png' />
       </head>
-      {/* <body className={`${barlowCondensed.className} antialiased flex min-h-screen`}>
-        <Sidebar />
-        <main className='flex flex-1 bg-secondary/10'>{children}</main>
-      </body> */}
       <body className={`${barlowCondensed.className} antialiased flex flex-row items-start flex-nowrap`}>
-        {/* <MantineProvider defaultColorScheme='light'> */}
-        <MantineProvider>
-          <Sidebar />
-          <main className='grow overflow-y-auto h-screen'>
-            <NavDash />
-            {children}
-          </main>
-          <Toaster richColors position='bottom-right' />
-        </MantineProvider>
+        <Sidebar />
+        <main className='grow w-full overflow-y-auto h-screen'>
+          <NavDash />
+          {children}
+        </main>
+        <Toaster richColors position='bottom-right' />
       </body>
     </html>
   );
