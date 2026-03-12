@@ -4,7 +4,6 @@ import '../globals.css';
 import Sidebar from '@/components/organism/Sidebar';
 import NavDash from '@/components/organism/NavDash';
 import { Toaster } from 'sonner';
-import '@mantine/tiptap/styles.css';
 
 const barlowCondensed = Barlow_Condensed({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
