@@ -10,3 +10,7 @@ export interface User {
   username: string;
   role: 'SuperAdmin' | 'Admin' | 'Staff' | 'Member';
 }
+
+export interface UserWithId extends User {
+  id: string;
+}

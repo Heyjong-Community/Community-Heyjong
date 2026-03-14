@@ -1,6 +1,6 @@
 'use client';
 
-import { Book, FileStack, House, Users } from 'lucide-react';
+import { Book, FileStack, House, Users, Key } from 'lucide-react';
 import Image from 'next/image';
 import React from 'react';
 import SidebarItem from '../molecules/SidebarItem';
@@ -29,6 +29,10 @@ export default function Sidebar() {
           <p className='text-gray-400 text-base font-semibold'>Community</p>
         </li>
         <SidebarItem href='member' label='Member' icon={Users} />
+        <li className='px-4'>
+          <p className='text-gray-400 text-base font-semibold'>Dashboard</p>
+        </li>
+        <SidebarItem href='access-user' label='Access User' icon={Key} />
       </ul>
     </aside>
   );
