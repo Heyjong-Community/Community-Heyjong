@@ -16,7 +16,7 @@ export default function ArticlePage() {
 
   return (
     <div>
-      <section className="bg-[url('/images/jongcamp.webp')] bg-cover bg-center bg-fixed w-full h-screen">
+      {/* <section className="bg-[url('/images/jongcamp.webp')] bg-cover bg-center bg-fixed w-full h-screen">
         <div className='bg-black/30 h-full w-full px-5 md:px-0 flex items-center justify-center'>
           <div className='w-full md:w-3/4' data-aos='fade-up' data-aos-duration='1000'>
             <p className='text-xs md:text-sm lg:text-base text-white uppercase font-bold'>
@@ -47,8 +47,42 @@ export default function ArticlePage() {
             </div>
           </div>
         </div>
+      </section> */}
+      <section className="bg-[url('/images/jongcamp.webp')] bg-cover bg-center bg-fixed w-full h-screen">
+        <div className='bg-black/40 h-full w-full px-5 md:px-0 flex items-center justify-center'>
+          <div className='w-full md:w-3/4' data-aos='fade-up' data-aos-duration='1000'>
+            <p className='text-xs md:text-sm lg:text-base text-white uppercase font-bold tracking-widest'>
+              EXPLORE INSIGHTS FROM HEYJONG COMMUNITY
+            </p>
+            <h1 className='font-semibold text-4xl md:text-[40px] lg:text-[90px] lg:leading-tight text-white'>
+              Ruang Literasi & <br /> Ide Tanpa Batas
+            </h1>
+            <p
+              className={`mt-4 w-full lg:w-3/4 xl:w-1/2 font-medium text-sm md:text-base lg:text-lg text-white/90 ${fraunces.className}`}
+            >
+              Temukan kumpulan artikel inspiratif, tips konten digital, dan cerita aksi sosial para pemuda hebat. Mari
+              bertumbuh bersama melalui wawasan yang menginspirasi perubahan.
+            </p>
+            <div className='mt-6 flex items-stretch gap-2.5'>
+              <Link
+                href={'#artikel'}
+                className='uppercase font-bold text-xs md:text-sm lg:text-base bg-[#DF334D] text-white px-6 py-2 rounded-md transition-hover hover:bg-[#b5293e]'
+              >
+                Jelajahi Artikel
+              </Link>
+              <Link
+                href={`https://heyjong.id/oprecMember`}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='uppercase font-bold text-xs md:text-sm lg:text-base bg-white text-black px-6 py-2 rounded-md flex items-center'
+              >
+                Gabung Komunitas
+              </Link>
+            </div>
+          </div>
+        </div>
       </section>
-      <section className='px-5 py-24 flex items-center justify-center'>
+      <section id='artikel' className='px-5 py-24 flex items-center justify-center'>
         <div className='relative skew-12 flex'>
           {/* Stroke text: z-0 */}
           <h1 className='text-black absolute -bottom-1 -left-4 z-0 text-3xl font-black md:-bottom-2 md:-left-1 md:text-5xl lg:text-7xl'>
