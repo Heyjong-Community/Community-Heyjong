@@ -23,6 +23,8 @@ export function useLogin() {
         toast.error(error.message);
         setError('Terjadi Kesalahan');
       }
+    } finally {
+      setLoading(false);
     }
   };
 
