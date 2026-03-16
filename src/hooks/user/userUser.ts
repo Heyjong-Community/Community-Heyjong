@@ -1,6 +1,6 @@
 'use client';
 
-import { AddNewAccount, GetListUsers } from '@/services/user';
+import { AddNewAccount, ChangePasswordAccount, GetListUsers, GetProfileAccount } from '@/services/user';
 import { User, UserWithId } from '@/types/auth';
 import { useRouter } from 'next/navigation';
 import { useCallback, useEffect, useState } from 'react';
@@ -82,4 +82,74 @@ export function useAddNewAccount() {
   };
 
   return { loading, error, handleCreateAccount };
+}
+
+export function useProfile() {
+  const [user, setUser] = useState<User | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  const router = useRouter();
+
+  const fetchProfile = useCallback(async () => {
+    try {
+      setLoading(true);
+      const response = await GetProfileAccount();
+      setUser(response.data);
+    } catch (err) {
+      if (err instanceof Error) {
+        if (err.message === 'SESSION_EXPIRED') {
+          router.push('/login');
+          return;
+        }
+
+        setError(err.message);
+      } else {
+        setError('Unknown error');
+      }
+    } finally {
+      setLoading(false);
+    }
+  }, [router]);
+
+  useEffect(() => {
+    fetchProfile();
+  }, [fetchProfile]);
+
+  return { user, loading, error, refetch: fetchProfile };
+}
+
+export function useChangePasswordAccount(refetch?: () => void) {
+  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>(null);
+  const router = useRouter();
+
+  const handleUpdatePassword = async ({ passwordPast, passwordNew }: { passwordPast: string; passwordNew: string }) => {
+    setLoading(true);
+    setError(null);
+
+    try {
+      await ChangePasswordAccount({
+        passwordPast,
+        passwordNew,
+      });
+      // setData(newAccount);
+      toast.success('Behasil update password');
+      // refetch profile
+      refetch?.();
+    } catch (error) {
+      if (error instanceof Error) {
+        if (error.message === 'SESSION_EXPIRED') {
+          router.push('/login');
+          return;
+        }
+
+        setError(error.message);
+      }
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return { loading, error, handleUpdatePassword };
 }

@@ -22,9 +22,12 @@ import {
   DialogTrigger,
 } from '../ui/dialog';
 import { useLogoutUser } from '@/hooks/user/useUserLogout';
+import Link from 'next/link';
+import { useProfile } from '@/hooks/user/userUser';
 
 export default function NavDash() {
   const { handleLogout } = useLogoutUser();
+  const { user } = useProfile();
   return (
     <nav className='shadow flex items-center justify-between px-4 py-2 bg-white border-b border-gray-200'>
       <div className=''>
@@ -35,13 +38,15 @@ export default function NavDash() {
       <div className=''>
         <Dialog>
           <DropdownMenu>
-            <DropdownMenuTrigger className='cursor-pointer'>Jong - Mahdy</DropdownMenuTrigger>
+            <DropdownMenuTrigger className='cursor-pointer'>Jong - {user?.username}</DropdownMenuTrigger>
             <DropdownMenuContent>
               <DropdownMenuLabel>My Account</DropdownMenuLabel>
               <DropdownMenuSeparator />
-              <DropdownMenuItem>Profile</DropdownMenuItem>
-              <DropdownMenuItem>Billing</DropdownMenuItem>
-              <DropdownMenuItem>Team</DropdownMenuItem>
+              <Link href={`/dashboard/account`} className='group'>
+                <DropdownMenuItem className='group-hover:bg-gray-300 transition-all duration-200'>
+                  Profile
+                </DropdownMenuItem>
+              </Link>
               <DropdownMenuItem>
                 <DialogTrigger asChild>
                   <Button variant='default' size='sm'>
