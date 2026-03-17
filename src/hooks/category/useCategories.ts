@@ -25,34 +25,41 @@ export function useCategories() {
   }, []);
 
   const addCategory = async (name: string, slug: string) => {
+    setError(null);
     try {
       const newCategory = await addNewCategory(name, slug);
       setCategories((prev) => [...prev, newCategory]);
       return newCategory;
     } catch (err) {
-      setError((err as Error).message);
-      throw err;
+      const message = (err as Error).message;
+      setError(message);
+      throw new Error(message);
     }
   };
 
   const editCategory = async (id: string, name: string) => {
+    setError(null);
     try {
       const updated = await updateCategory(id, name);
       setCategories((prev) => prev.map((cat) => (cat.id === id ? updated : cat)));
+      return updated;
     } catch (err) {
-      setError((err as Error).message);
+      const message = (err as Error).message;
+      setError(message);
+      throw new Error(message);
     }
   };
 
   const removeCategory = async (id: string) => {
+    setError(null);
     try {
       await deleteCategory(id);
-      console.log('Deleted category with id =', id);
-      // await fetchCategories();
+
       setCategories((prev) => prev.filter((cat) => cat.id !== id));
-      console.log('After fetch, categories =', categories);
     } catch (err) {
-      setError((err as Error).message);
+      const message = (err as Error).message;
+      setError(message);
+      throw new Error(message);
     }
   };
 

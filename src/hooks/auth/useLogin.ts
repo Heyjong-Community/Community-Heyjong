@@ -18,11 +18,19 @@ export function useLogin() {
 
       toast.success(response.message);
       router.push('/dashboard');
+
+      return response;
     } catch (error) {
-      if (error instanceof Error) {
-        toast.error(error.message);
-        setError('Terjadi Kesalahan');
-      }
+      // if (error instanceof Error) {
+      //   toast.error(error.message);
+      //   setError('Terjadi Kesalahan');
+      // }
+      const message = error instanceof Error ? error.message : 'Terjadi kesalahan';
+
+      toast.error(message);
+      setError(message);
+
+      // throw new Error(message);
     } finally {
       setLoading(false);
     }

@@ -1,14 +1,10 @@
+import { handleResponse } from '@/helpers/response';
 import { NewArticlePayload } from '@/types/article';
 
 export async function GetAllArticles(page: number, limit: number) {
   try {
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_BACKEND}/article/all?page=${page}&limit=${limit}`);
-    if (!res.ok) {
-      const errorData = await res.json();
-      throw new Error(errorData.message || 'Failed to fetch');
-    }
-
-    const data = await res.json();
+    const data = await handleResponse(res, 'Gagal ambil data');
 
     return data;
   } catch (error) {
@@ -19,12 +15,7 @@ export async function GetAllArticles(page: number, limit: number) {
 export async function GetArticleById(id: string) {
   try {
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_BACKEND}/article/${id}`);
-    if (!res.ok) {
-      const errorData = await res.json();
-      throw new Error(errorData.message || 'Failed to fetch');
-    }
-
-    const data = await res.json();
+    const data = await handleResponse(res, 'Gagal ambil data');
 
     return data.data;
   } catch (error) {
@@ -35,12 +26,7 @@ export async function GetArticleById(id: string) {
 export async function GetArticleBySlug(slug: string) {
   try {
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_BACKEND}/article/detail/${slug}`);
-    if (!res.ok) {
-      const errorData = await res.json();
-      throw new Error(errorData.message || 'Failed to fetch');
-    }
-
-    const data = await res.json();
+    const data = await handleResponse(res, 'Gagal ambil data');
 
     return data.data;
   } catch (error) {
@@ -66,15 +52,7 @@ export async function addNewArticle(payload: NewArticlePayload) {
       body: formData,
     });
 
-    if (res.status === 401) {
-      throw new Error('Unauthorized');
-    }
-    const data = await res.json();
-
-    if (!res.ok) {
-      throw new Error(data.message || 'Failed to add data');
-    }
-
+    const data = await handleResponse(res, 'Gagal tambah data');
     return data.data;
   } catch (error) {
     throw new Error((error as Error).message || 'Network error');
@@ -92,23 +70,13 @@ export async function updateArticleService(id: string, payload: NewArticlePayloa
       formData.append('thumbnail', payload.thumbnail);
     }
 
-    console.log('ini form = ', formData);
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_BACKEND}/article/edit/${id}`, {
       method: 'PUT',
       credentials: 'include',
       body: formData,
     });
 
-    console.log('res = ', res);
-
-    if (res.status === 401) {
-      throw new Error('Unauthorized');
-    }
-    const data = await res.json();
-
-    if (!res.ok) {
-      throw new Error(data.message || 'Failed to add data');
-    }
+    const data = await handleResponse(res, 'Gagal update data');
 
     return data.data;
   } catch (error) {
@@ -128,14 +96,7 @@ export async function publishArticleService(id: string) {
       }),
     });
 
-    if (res.status === 401) {
-      throw new Error('Unauthorized');
-    }
-    const data = await res.json();
-
-    if (!res.ok) {
-      throw new Error(data.message || 'Failed to publish');
-    }
+    const data = await handleResponse(res, 'Gagal publish');
 
     return data.data;
   } catch (error) {
@@ -152,14 +113,7 @@ export async function unPublishArticleService(id: string) {
       body: JSON.stringify({ published: false, published_date: null }),
     });
 
-    if (res.status === 401) {
-      throw new Error('Unauthorized');
-    }
-    const data = await res.json();
-
-    if (!res.ok) {
-      throw new Error(data.message || 'Failed to publish');
-    }
+    const data = await handleResponse(res, 'Gagal unpublish');
 
     return data.data;
   } catch (error) {
@@ -174,16 +128,7 @@ export async function deleteArticle(id: string) {
       credentials: 'include',
     });
 
-    if (res.status === 401) {
-      throw new Error('Unauthorized');
-    }
-
-    const data = await res.json();
-
-    if (!res.ok) {
-      const errorData = await res.json();
-      throw new Error(errorData.message || 'Failed to delete');
-    }
+    const data = await handleResponse(res, 'Gagal hapus data');
 
     return data.data;
     // return res.json();
