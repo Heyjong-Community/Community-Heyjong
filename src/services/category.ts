@@ -1,12 +1,10 @@
+import { handleResponse } from '@/helpers/response';
+
 export async function getAllCategories(page: number, limit: number) {
   try {
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_BACKEND}/category/all?page=${page}&limit=${limit}`);
-    if (!res.ok) {
-      const errorData = await res.json();
-      throw new Error(errorData.message || 'Failed to fetch');
-    }
 
-    const data = await res.json();
+    const data = await handleResponse(res, 'Gagal ambil data');
 
     return data;
   } catch (error) {
@@ -17,12 +15,8 @@ export async function getAllCategories(page: number, limit: number) {
 export async function getCategoryById(id: string) {
   try {
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_BACKEND}/category/${id}`);
-    if (!res.ok) {
-      const errorData = await res.json();
-      throw new Error(errorData.message || 'Failed to fetch');
-    }
 
-    const data = await res.json();
+    const data = await handleResponse(res, 'Gagal ambil data');
 
     return data.data;
   } catch (error) {
@@ -39,19 +33,8 @@ export async function addNewCategory(name: string, slug: string) {
       body: JSON.stringify({ name, slug }),
     });
 
-    if (res.status === 401) {
-      throw new Error('Unauthorized');
-    }
-
-    const data = await res.json();
-
-    if (!res.ok) {
-      const errorData = await res.json();
-      throw new Error(errorData.message || 'Failed to add data');
-    }
-
+    const data = await handleResponse(res, 'Gagal tambah data');
     return data.data;
-    // return res.json();
   } catch (error) {
     throw new Error((error as Error).message || 'Network error');
   }
@@ -66,16 +49,7 @@ export async function updateCategory(id: string, name: string) {
       body: JSON.stringify({ name }),
     });
 
-    if (res.status === 401) {
-      throw new Error('Unauthorized');
-    }
-
-    const data = await res.json();
-
-    if (!res.ok) {
-      const errorData = await res.json();
-      throw new Error(errorData.message || 'Failed to update');
-    }
+    const data = await handleResponse(res, 'Gagal update data');
 
     return data.data;
     // return res.json();
@@ -91,16 +65,7 @@ export async function deleteCategory(id: string) {
       credentials: 'include',
     });
 
-    if (res.status === 401) {
-      throw new Error('Unauthorized');
-    }
-
-    const data = await res.json();
-
-    if (!res.ok) {
-      const errorData = await res.json();
-      throw new Error(errorData.message || 'Failed to delete');
-    }
+    const data = await handleResponse(res, 'Gagal hapus data');
 
     return data.data;
     // return res.json();

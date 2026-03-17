@@ -16,7 +16,7 @@ const QuillEditorForm = dynamic(() => import('@/components/organism/QuillEditor'
 export default function EditArticlePage() {
   const router = useRouter();
   const params = useParams();
-  const baseUrl = 'http://localhost:5000';
+  const baseUrl = process.env.NEXT_PUBLIC_API_IMG;
 
   const { id } = params;
   const { categories, fetchCategories } = useCategories();
@@ -38,7 +38,6 @@ export default function EditArticlePage() {
     const fetchArticle = async () => {
       try {
         const article = await getArticleById(id as string);
-        console.log('data artikel = ', article);
         setFormData({
           title: article.title,
           slug: article.slug,
@@ -62,7 +61,7 @@ export default function EditArticlePage() {
     };
 
     if (id) fetchArticle();
-  }, [id, fetchCategories, getArticleById]);
+  }, [id, fetchCategories, getArticleById, baseUrl]);
 
   const generateSlug = (text: string) => {
     return text

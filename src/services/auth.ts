@@ -1,3 +1,4 @@
+import { handleResponse } from '@/helpers/response';
 import { LoginRequest } from '@/types/auth';
 
 export async function loginService(data: LoginRequest) {
@@ -9,15 +10,7 @@ export async function loginService(data: LoginRequest) {
     body: JSON.stringify(data),
   });
 
-  if (!res.ok) {
-    const errorData = await res.json();
-    throw new Error(errorData.message || 'Login failed');
-  }
-
-  return res.json();
-  // } catch (error) {
-  //   throw new Error(`failed login: ${error instanceof Error ? error.message : String(error)}`);
-  // }
+  return handleResponse(res, 'Login gagal');
 }
 
 export async function logoutService() {
@@ -26,10 +19,7 @@ export async function logoutService() {
     credentials: 'include',
   });
 
-  if (!res.ok) {
-    throw new Error('Logout gagal');
-  }
-  return res.json();
+  return handleResponse(res, 'Logout gagal');
 }
 
 export async function getProfile() {
@@ -38,8 +28,6 @@ export async function getProfile() {
     credentials: 'include',
   });
 
-  if (!res.ok) {
-    throw new Error('Logout gagal');
-  }
-  return res.json();
+  const data = await handleResponse(res, 'Gagal ambil profil');
+  return data.data;
 }

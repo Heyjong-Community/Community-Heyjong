@@ -1,3 +1,4 @@
+import { handleResponse } from '@/helpers/response';
 import { User } from '@/types/auth';
 
 export async function GetListUsers() {
@@ -34,16 +35,7 @@ export async function AddNewAccount(payload: User) {
       body: JSON.stringify(payload),
     });
 
-    const data = await res.json();
-
-    if (res.status === 401) {
-      throw new Error('SESSION_EXPIRED');
-    }
-
-    if (!res.ok) {
-      const errorData = await res.json();
-      throw new Error(errorData.message || 'Failed to add data');
-    }
+    const data = await handleResponse(res, 'Gagal tambah data');
 
     return data.data;
   } catch (error) {
