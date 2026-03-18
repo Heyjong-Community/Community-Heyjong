@@ -4,8 +4,10 @@ import { Book, FileStack, House, Users, Key } from 'lucide-react';
 import Image from 'next/image';
 import React from 'react';
 import SidebarItem from '../molecules/SidebarItem';
+import { useProfile } from '@/hooks/user/userUser';
 
 export default function Sidebar() {
+  const { user } = useProfile();
   return (
     // <aside className='hidden w-64 overflow-y-auto bg-[#F5FFF5] lg:block'>
     // <aside className='hidden w-64 grow-0 h-screen shadow bg-secondary/10 lg:block'>
@@ -29,10 +31,14 @@ export default function Sidebar() {
           <p className='text-gray-400 text-base font-semibold'>Community</p>
         </li>
         <SidebarItem href='member' label='Member' icon={Users} />
-        <li className='px-4'>
-          <p className='text-gray-400 text-base font-semibold'>Dashboard</p>
-        </li>
-        <SidebarItem href='access-user' label='Access User' icon={Key} />
+        {user?.role === 'SuperAdmin' && (
+          <>
+            <li className='px-4'>
+              <p className='text-gray-400 text-base font-semibold'>Dashboard</p>
+            </li>
+            <SidebarItem href='access-user' label='Access User' icon={Key} />
+          </>
+        )}
       </ul>
     </aside>
   );
