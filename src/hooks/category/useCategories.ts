@@ -56,6 +56,8 @@ export function useCategories() {
       await deleteCategory(id);
 
       setCategories((prev) => prev.filter((cat) => cat.id !== id));
+      await fetchCategories(pagination?.currentPage ?? 1, 10);
+      return { success: true };
     } catch (err) {
       const message = (err as Error).message;
       setError(message);

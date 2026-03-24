@@ -8,7 +8,7 @@ import { Pencil } from 'lucide-react';
 import Link from 'next/link';
 import RemoveArticleButton from './remove-button';
 
-export const columns: ColumnDef<Article>[] = [
+export const getColumns = (onRemove: (id: string) => Promise<void>): ColumnDef<Article>[] => [
   {
     accessorKey: 'title',
     header: 'Judul',
@@ -42,11 +42,7 @@ export const columns: ColumnDef<Article>[] = [
               Edit
             </Link>
           </Button>
-          <RemoveArticleButton id={article.id} name={article.title} />
-          {/* <Button size='sm' type='submit' variant='destructive'>
-            <Trash className='h-4 w-4' />
-            Hapus
-          </Button> */}
+          <RemoveArticleButton id={article.id} name={article.title} onRemove={onRemove} />
         </div>
       );
     },

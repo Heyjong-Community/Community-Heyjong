@@ -109,8 +109,14 @@ export function useArticles() {
     try {
       await deleteArticle(id);
       setArticles((prev) => prev.filter((artcl) => artcl.id !== id));
+      // Refetch to ensure data is in sync with server
+      await fetchArticles(pagination?.currentPage ?? 1, 10);
+      return { success: true };
     } catch (error) {
       setError((error as Error).message);
+      throw error;
+    } finally {
+      setLoading(false);
     }
   };
 

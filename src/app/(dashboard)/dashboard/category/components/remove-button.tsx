@@ -1,4 +1,3 @@
-import { useCategories } from '@/hooks/category/useCategories';
 import React, { useState } from 'react';
 import { toast } from 'sonner';
 import {
@@ -17,17 +16,17 @@ import { Button } from '@/components/ui/button';
 type Props = {
   id: string;
   name: string;
+  onRemove: (id: string) => Promise<void>;
 };
 
-export default function RemoveCategoryButton({ id, name }: Props) {
-  const { removeCategory } = useCategories();
+export default function RemoveCategoryButton({ id, name, onRemove }: Props) {
   const [open, setOpen] = useState<boolean>(false);
   const [submitting, setSubmitting] = useState<boolean>(false);
 
   const handleRemove = async () => {
     try {
       setSubmitting(true);
-      await removeCategory(id);
+      await onRemove(id);
 
       setOpen(false);
       toast.success('Kategori dihapus');

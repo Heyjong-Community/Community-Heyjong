@@ -2,18 +2,22 @@
 
 import { DataTable } from '@/components/ui/data-table';
 import React, { useEffect } from 'react';
-import { columns } from './components/column-table';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Plus } from 'lucide-react';
 import { useCategories } from '@/hooks/category/useCategories';
+import { getColumns } from './components/column-table';
 
 export default function CategoryPage() {
-  const { categories, loading, error, fetchCategories, pagination } = useCategories();
+  const { categories, loading, error, fetchCategories, pagination, removeCategory } = useCategories();
 
   useEffect(() => {
     fetchCategories(1, 10);
   }, [fetchCategories]);
+
+  const handleRemove = async (id: string) => {
+    await removeCategory(id);
+  };
 
   if (loading) {
     return <p className='text-base font-semibold text-black'>Loading ...</p>;
@@ -35,7 +39,7 @@ export default function CategoryPage() {
         </Button>
       </div>
       <div className=''>
-        <DataTable columns={columns} data={categories ?? []} />
+        <DataTable columns={getColumns(handleRemove)} data={categories ?? []} />
       </div>
       <div className='flex items-center justify-end space-x-2 py-4'>
         <Button

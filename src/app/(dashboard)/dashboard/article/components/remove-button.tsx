@@ -12,27 +12,26 @@ import {
   AlertDialogTrigger,
 } from '@/components/ui/alert-dialog';
 import { Button } from '@/components/ui/button';
-import { useArticles } from '@/hooks/article/useArticles';
 
 type Props = {
   id: string;
   name: string;
+  onRemove: (id: string) => Promise<void>;
 };
 
-export default function RemoveArticleButton({ id, name }: Props) {
-  const { removeArticle } = useArticles();
+export default function RemoveArticleButton({ id, name, onRemove }: Props) {
   const [open, setOpen] = useState<boolean>(false);
   const [submitting, setSubmitting] = useState<boolean>(false);
 
   const handleRemove = async () => {
     try {
       setSubmitting(true);
-      await removeArticle(id);
+      await onRemove(id);
 
-      setOpen(false);
       toast.success('Artikel dihapus');
+      setOpen(false);
     } catch (error) {
-      toast.success(`${(error as Error).message}`);
+      toast.error(`${(error as Error).message}`);
     } finally {
       setSubmitting(false);
     }

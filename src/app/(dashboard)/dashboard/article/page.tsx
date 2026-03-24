@@ -2,56 +2,22 @@
 
 import { DataTable } from '@/components/ui/data-table';
 import React, { useEffect } from 'react';
-import { columns } from './components/column-table';
+import { getColumns } from './components/column-table';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Plus } from 'lucide-react';
 import { useArticles } from '@/hooks/article/useArticles';
 
-// const dummyArticles: Article[] = [
-//   {
-//     title: 'Mengenal Ekosistem Mangrove',
-//     category: 'Lingkungan',
-//     content: 'Artikel ini membahas pentingnya ekosistem mangrove...',
-//     author: 'Mahdy Mubasyir',
-//     published: '2025-08-20',
-//   },
-//   {
-//     title: 'Tips Manajemen Keuangan Pribadi',
-//     category: 'Keuangan',
-//     content: 'Mengatur keuangan pribadi sangat penting agar...',
-//     author: 'Raihanah Kalamullah',
-//     published: '2025-08-15',
-//   },
-//   {
-//     title: 'Belajar Next.js 14 untuk Pemula',
-//     category: 'Teknologi',
-//     content: 'Next.js 14 hadir dengan fitur App Router...',
-//     author: 'Jong Developer',
-//     published: '2025-08-10',
-//   },
-//   {
-//     title: 'Pola Hidup Sehat dengan Olahraga',
-//     category: 'Kesehatan',
-//     content: 'Olahraga rutin dapat meningkatkan kualitas hidup...',
-//     author: 'Dindah Fitriana',
-//     published: '2025-08-05',
-//   },
-//   {
-//     title: 'Sejarah Perkembangan Islam di Nusantara',
-//     category: 'Sejarah',
-//     content: 'Islam masuk ke Nusantara melalui jalur perdagangan...',
-//     author: 'Bop Santoso',
-//     published: '2025-08-01',
-//   },
-// ];
-
 export default function ArticlePage() {
-  const { articles, loading, error, fetchArticles, pagination } = useArticles();
+  const { articles, loading, error, fetchArticles, pagination, removeArticle } = useArticles();
 
   useEffect(() => {
     fetchArticles(1, 10);
   }, [fetchArticles]);
+
+  const handleRemove = async (id: string) => {
+    await removeArticle(id);
+  };
 
   if (loading) {
     return <p className='text-base font-semibold text-black'>Loading ...</p>;
@@ -72,7 +38,7 @@ export default function ArticlePage() {
           </Link>
         </Button>
       </div>
-      <DataTable columns={columns} data={articles ?? []} />
+      <DataTable columns={getColumns(handleRemove)} data={articles ?? []} />
       <div className='flex items-center justify-end space-x-2 py-4'>
         <Button
           variant='outline'
