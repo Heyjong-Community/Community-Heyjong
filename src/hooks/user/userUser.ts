@@ -65,7 +65,7 @@ export function useAddNewAccount() {
     try {
       await AddNewAccount(payload);
       // setData(newAccount);
-      toast.success('Behasil tambah akun baru');
+      toast.success('Berhasil tambah akun baru');
       router.push('/dashboard/access-user');
     } catch (error) {
       if (error instanceof Error) {
@@ -134,7 +134,7 @@ export function useChangePasswordAccount(refetch?: () => void) {
         passwordNew,
       });
       // setData(newAccount);
-      toast.success('Behasil update password');
+      toast.success('Berhasil update password');
       // refetch profile
       refetch?.();
     } catch (error) {
