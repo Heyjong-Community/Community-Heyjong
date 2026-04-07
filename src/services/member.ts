@@ -3,7 +3,9 @@ import { FormMember } from '@/types/member';
 
 export async function GetAllMembers(page: number, limit: number) {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_BACKEND}/member/all?page=${page}&limit=${limit}`);
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_BACKEND}/member/all?page=${page}&limit=${limit}`, {
+      credentials: 'include',
+    });
     const data = await handleResponse(res, 'Gagal ambil data');
 
     return data;
