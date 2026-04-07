@@ -50,7 +50,7 @@ export default function Navbar() {
           alt='logo'
           className='size-12 md:size-16 lg:size-20'
         />
-        <h2 className={`text-xl font-semibold leading-5 ${hasScrolled ? 'text-black' : 'text-white'}`}>
+        <h2 className={`text-lg font-bold leading-5 ${hasScrolled ? 'text-black' : 'text-white'}`}>
           HEYJONG <br /> COMMUNITY
         </h2>
       </div>
@@ -59,12 +59,12 @@ export default function Navbar() {
           <li key={index}>
             <Link
               href={menu.link}
-              className={`text-sm font-semibold lg:text-[22px] uppercase ${
+              className={`text-sm font-semibold md:text-base lg:text-lg ${
                 route === menu.link || (menu.link !== '/' && route.startsWith(menu.link))
                   ? 'text-primary'
                   : hasScrolled
-                  ? 'text-black font-semibold'
-                  : 'text-white'
+                    ? 'text-black font-semibold'
+                    : 'text-white'
               }`}
             >
               {menu.nama}
@@ -75,12 +75,12 @@ export default function Navbar() {
       <div className='my-auto lg:hidden'>
         <button onClick={handleOpenMenu} className='flex flex-col gap-2'>
           <span
-            className={`h-[2px] w-6 ${
+            className={`h-0.5 w-6 ${
               hasScrolled ? 'bg-black' : 'bg-white'
             } transition-transform duration-300 ease-in-out ${openMenu ? 'translate-y-1.5 rotate-45' : ''}`}
           ></span>
           <span
-            className={`h-[2px] w-6 ${
+            className={`h-0.5 w-6 ${
               hasScrolled ? 'bg-black' : 'bg-white'
             } transition-transform duration-300 ease-in-out ${openMenu ? '-translate-y-1 -rotate-45' : ''}`}
           ></span>

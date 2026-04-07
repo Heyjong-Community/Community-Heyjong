@@ -17,7 +17,7 @@ export default function ActivityPage() {
   return (
     <div>
       <section className="bg-[url('/images/jongcamp.webp')] bg-cover bg-center bg-fixed w-full h-screen">
-        <div className='bg-black/30 h-full w-full px-5 md:px-0 flex items-center justify-center'>
+        <div className='bg-black/50 h-full w-full px-5 md:px-0 flex items-center justify-center'>
           <div className='w-full md:w-3/4' data-aos='fade-up' data-aos-duration='1000'>
             <p className='text-xs md:text-sm lg:text-base text-white uppercase font-bold'>
               WELCOME TO HEYJONG COMMUNITY
@@ -25,9 +25,7 @@ export default function ActivityPage() {
             <h1 className='font-semibold text-4xl md:text-[40px] lg:text-[90px] lg:leading-24 text-white'>
               Let&apos;s Grow Together & <br /> Spread Good Vibes
             </h1>
-            <p
-              className={`mt-4 w-full lg:w-3/4 xl:w-1/2 font-semibold text-sm md:text-base lg:text-lg text-white ${fraunces.className}`}
-            >
+            <p className={`mt-4 w-full lg:w-3/4 xl:w-1/2 font-medium text-sm md:text-base lg:text-lg text-white`}>
               Heyjong Community merupakan wadah bagi para pemuda untuk mengembangkan potensi diri dan melatih daya cipta
               sehingga mampu berperan aktif dalam menebarkan kebaikan baik di dunia maya dalam bentuk kreasi konten
               digital maupun dunia nyata dalam bentuk kegiatan-kegiatan sosial.

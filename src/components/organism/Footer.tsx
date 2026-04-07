@@ -17,9 +17,10 @@ export default function Footer() {
         <div className='grid grid-cols-1 md:grid-cols-4 gap-6 lg:w-3/4 mx-auto'>
           <div className=''>
             <p className='font-extrabold text-white text-xl uppercase'>Contact</p>
-            <div className={`mt-3 ${fraunces.className}`}>
+            <div className={`mt-3`}>
               <p className='text-white text-base tracking-tight'>
-                Jl. H. Taiman Barat 1 No.4, RT.2/RW.2, Ps. Rebo, Kota Jakarta Timur, DKI Jakarta
+                Jl. RS. Fatmawati Raya No.2, RT.2/RW.7, Pd. Labu, West Cilandak, Kota Jakarta Selatan, Daerah Khusus
+                Ibukota Jakarta 12450
               </p>
               <p className='text-white text-base tracking-tight'>0895-3283-10378 (Kak Dieni)</p>
               <p className='text-white text-base tracking-tight'>heyjongcommunity@gmail.com</p>
@@ -27,7 +28,7 @@ export default function Footer() {
           </div>
           <div className=''>
             <p className='font-extrabold text-white text-xl uppercase'>Community</p>
-            <div className={`mt-3 ${fraunces.className}`}>
+            <div className={`mt-3`}>
               {daftarMenu.map((menu, i) => (
                 <Link href={menu.link} key={i}>
                   <p className='text-white text-base tracking-tight hover:text-primary transition-all duration-200'>
@@ -44,7 +45,7 @@ export default function Footer() {
           </div>
           <div className=''>
             <p className='font-extrabold text-white text-xl uppercase'>Kegiatan</p>
-            <div className={`mt-3 ${fraunces.className}`}>
+            <div className={`mt-3`}>
               <p className='text-white text-base tracking-tight'>Seminar</p>
               <p className='text-white text-base tracking-tight'>Impact</p>
               <p className='text-white text-base tracking-tight'>Charity</p>
@@ -54,7 +55,7 @@ export default function Footer() {
           </div>
           <div className=''>
             <p className='font-extrabold text-white text-xl uppercase'>Social Media</p>
-            <div className={`mt-3 flex items-center gap-3 ${fraunces.className}`}>
+            <div className={`mt-3 flex items-center gap-3`}>
               <SocialIcon
                 url='https://www.instagram.com/heyjong_community'
                 style={{ height: 40, width: 40 }}

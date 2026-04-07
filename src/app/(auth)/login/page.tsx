@@ -7,8 +7,8 @@ import React, { useState } from 'react';
 export default function LoginPage() {
   const { handleLogin, loading, error } = useLogin();
 
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

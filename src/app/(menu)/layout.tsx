@@ -4,6 +4,7 @@ import '../globals.css';
 import Navbar from '@/components/organism/Navbar';
 import Footer from '@/components/organism/Footer';
 import { Analytics } from '@vercel/analytics/next';
+import { inter, poppins } from '@/utils/fonts';
 
 const barlowCondensed = Barlow_Condensed({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
@@ -35,7 +36,8 @@ export default function RootLayout({
       <head>
         <link rel='icon' type='image/png' href='/images/logo-color.png' />
       </head>
-      <body className={`${barlowCondensed.className} antialiased`}>
+      {/* <body className={`${barlowCondensed.className} antialiased`}> */}
+      <body className={`${poppins.className} antialiased`}>
         <Navbar />
         {children}
         <Footer />
