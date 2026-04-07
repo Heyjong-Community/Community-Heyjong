@@ -1,16 +1,9 @@
-import type { Metadata } from 'next';
-import { Barlow_Condensed } from 'next/font/google';
-import '../globals.css';
-import Navbar from '@/components/organism/Navbar';
 import Footer from '@/components/organism/Footer';
+import Navbar from '@/components/organism/Navbar';
+import { poppins } from '@/utils/fonts';
 import { Analytics } from '@vercel/analytics/next';
-import { inter, poppins } from '@/utils/fonts';
-
-const barlowCondensed = Barlow_Condensed({
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-  style: ['normal', 'italic'],
-  subsets: ['latin'],
-});
+import type { Metadata } from 'next';
+import '../globals.css';
 
 export const metadata: Metadata = {
   title: 'Heyjong Community',

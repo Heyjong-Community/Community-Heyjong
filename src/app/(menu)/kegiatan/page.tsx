@@ -1,6 +1,5 @@
 'use client';
 
-import { fraunces } from '@/utils/fonts';
 import { charityGallery, impactGallery, seminarGallery } from '@/utils/gallery';
 import AOS from 'aos';
 import 'aos/dist/aos.css';

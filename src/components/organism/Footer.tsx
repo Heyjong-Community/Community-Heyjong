@@ -1,14 +1,6 @@
 import { daftarMenu } from '@/utils/navigation';
-import { Fraunces } from 'next/font/google';
 import Link from 'next/link';
-import React from 'react';
 import { SocialIcon } from 'react-social-icons';
-
-const fraunces = Fraunces({
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-  style: ['normal', 'italic'],
-  subsets: ['latin'],
-});
 
 export default function Footer() {
   return (
