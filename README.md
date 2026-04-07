@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Community Heyjong
 
-## Getting Started
+Community Heyjong adalah aplikasi web platform komunitas yang dibangun menggunakan Next.js 15 dan React 19. Aplikasi ini menyediakan fungsionalitas publik dan dashboard admin untuk mengelola konten, anggota, kategori, serta artikel komunitas secara intuitif.
 
-First, run the development server:
+## Fitur Utama
+
+- Autentikasi dan otorisasi pengguna
+- Dashboard admin dengan manajemen artikel, kategori, dan anggota
+- Tampilan publik untuk menu, artikel, kegiatan, dan halaman kontak
+- Editor rich text untuk menambah dan mengedit artikel
+- Komponen tabel interaktif dan UI responsif berbasis Tailwind CSS
+- Navigasi menu dan sidebar yang modular
+
+## Struktur Proyek
+
+- `src/app/` - Routing aplikasi menggunakan App Router Next.js
+- `src/components/` - Komponen UI dan organisasi desain sistem
+- `src/hooks/` - Hook khusus untuk mengambil data dan logika state
+- `src/services/` - API service untuk autentikasi, artikel, kategori, member, dan user
+- `src/lib/` - Utility dan helper untuk RBAC, format tanggal, dan sanitasi HTML
+- `src/types/` - Tipe TypeScript untuk model data aplikasi
+
+## Teknologi
+
+- Next.js 15
+- React 19
+- TypeScript
+- Tailwind CSS 4
+- Radix UI
+- React Table
+- React Quill
+- Swiper
+- Sonner toast notifications
+- Lucide Icons / Heroicons
+
+## Persiapan dan Jalankan
+
+1. Install dependensi:
+
+```bash
+npm install
+```
+
+2. Jalankan server development:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Buka aplikasi di browser:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Skrip NPM
 
-## Learn More
+- `npm run dev` - Menjalankan server development dengan Turbopack
+- `npm run build` - Membangun aplikasi untuk production
+- `npm run start` - Menjalankan aplikasi yang sudah dibangun
+- `npm run lint` - Menjalankan linting ESLint
 
-To learn more about Next.js, take a look at the following resources:
+## Tips Pengembangan
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- File entry utama halaman publik berada di `src/app/(menu)/`
+- Dashboard admin berada di `src/app/(dashboard)/dashboard`
+- Gunakan `src/components/organism/` untuk komponen layout yang dapat digunakan ulang
+- Periksa `src/services/` untuk alur panggilan API dan integrasi backend
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Kontribusi
 
-## Deploy on Vercel
+Jika Anda ingin mengembangkan proyek ini lebih lanjut, tambahkan fitur baru sesuai struktur modular dan pastikan kode tetap konsisten dengan pola komponen dan hook yang sudah ada.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Dokumentasi ini disesuaikan untuk `community-heyjong` agar mudah dipahami dan dikembangkan oleh tim.
